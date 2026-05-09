@@ -1,21 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   ROOFMATCH — MAIN SHARED SCRIPT
-   File: /js/main.js
 
-   Controls:
-   - page meta
-   - shared header
-   - shared footer
-   - dynamic config injection
-   - service cards
-   - FAQ accordion + JSON-LD schema
-   - policy banner
-   - mobile menu with inert/focus handling
-   - scroll reveal
-   - image fallback class
-   ========================================================== */
 
 (function () {
     const onReady = (callback) => {
@@ -52,9 +37,7 @@
         refreshIcons();
     });
 
-    /* =========================
-       HELPERS
-       ========================= */
+    
 
     function getCurrentFile() {
         const file = window.location.pathname.split("/").pop();
@@ -117,9 +100,7 @@
         }
     }
 
-    /* =========================
-       ACCESSIBILITY
-       ========================= */
+    
 
     function ensureSkipLink() {
         if (document.querySelector(".skip-link")) return;
@@ -132,9 +113,7 @@
         document.body.insertBefore(skipLink, document.body.firstChild);
     }
 
-    /* =========================
-       PAGE META
-       ========================= */
+    
 
     function applyPageMeta(config) {
         const currentFile = getCurrentFile();
@@ -160,9 +139,7 @@
         description.setAttribute("content", pageMeta.description || "");
     }
 
-    /* =========================
-       HEADER
-       ========================= */
+    
 
     function injectSharedHeader(config) {
         const mount = document.querySelector("[data-site-header]");
@@ -353,9 +330,7 @@
     `;
     }
 
-    /* =========================
-       FOOTER
-       ========================= */
+    
 
     function injectSharedFooter(config) {
         const mount = document.querySelector("[data-site-footer]");
@@ -483,9 +458,7 @@
     `;
     }
 
-    /* =========================
-       DYNAMIC CONFIG TEXT
-       ========================= */
+    
 
     function applyDynamicConfigText(config) {
         setText("[data-company-name]", config.companyName);
@@ -519,9 +492,7 @@
         });
     }
 
-    /* =========================
-       GLOBAL CONFIG REPLACEMENTS
-       ========================= */
+    
 
     function applyGlobalConfigReplacements(config) {
         if (!config) return;
@@ -660,9 +631,7 @@
         mutationObserver.observe(document.body, { childList: true, subtree: true });
     }
 
-    /* =========================
-       SERVICE CARDS
-       ========================= */
+    
 
     function renderServiceCards(config) {
         const containers = document.querySelectorAll("[data-service-cards]");
@@ -759,9 +728,7 @@
         refreshIcons();
     }
 
-    /* =========================
-       FAQ
-       ========================= */
+    
 
     function initFaqLists(config) {
         const faqContainers = document.querySelectorAll("[data-faq-list]");
@@ -860,9 +827,7 @@
         document.head.appendChild(script);
     }
 
-    /* =========================
-       POLICY BANNER
-       ========================= */
+    
 
     function initPolicyBanner(config) {
         const bannerConfig = config.cookieBanner;
@@ -936,9 +901,7 @@
         });
     }
 
-    /* =========================
-       MOBILE MENU
-       ========================= */
+    
 
     function initMobileMenu() {
         const menu = document.querySelector("[data-mobile-menu]");
@@ -1053,9 +1016,7 @@
         });
     }
 
-    /* =========================
-       SCROLL REVEAL
-       ========================= */
+    
 
     function initScrollReveal() {
         const root = document.querySelector("main") || document.body;
@@ -1137,9 +1098,7 @@
         }, 5000);
     }
 
-    /* =========================
-       IMAGE FALLBACKS
-       ========================= */
+    
 
     function initImageFallbacks() {
         document.querySelectorAll("img").forEach((image) => {

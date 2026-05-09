@@ -1,13 +1,6 @@
-/* ==========================================================
-   ROOFMATCH — ABOUT PAGE
-   Dark copper editorial platform story
-   File: /css/about.css
-   ========================================================== */
 
-/* ==========================================================
-   ABOUT HERO
-   Uses global .about-hero photo hero system from style.css
-   ========================================================== */
+
+
 
 .about-hero {
     background: var(--color-bg);
@@ -46,9 +39,7 @@
     color: var(--color-accent-light);
 }
 
-/* ==========================================================
-   STORY SECTION
-   ========================================================== */
+
 
 .about-story {
     position: relative;
@@ -237,9 +228,7 @@
     filter: saturate(1.24) contrast(1.14) brightness(0.9);
 }
 
-/* ==========================================================
-   MODEL SECTION
-   ========================================================== */
+
 
 .about-model {
     position: relative;
@@ -417,9 +406,7 @@
     border-color: var(--color-accent);
 }
 
-/* ==========================================================
-   REQUEST CLARITY
-   ========================================================== */
+
 
 .about-clarity {
     position: relative;
@@ -544,9 +531,7 @@
     color: var(--color-heading);
 }
 
-/* ==========================================================
-   ABOUT CTA
-   ========================================================== */
+
 
 .about-cta {
     position: relative;
@@ -674,9 +659,7 @@
     line-height: 1.5;
 }
 
-/* ==========================================================
-   ABOUT FAQ
-   ========================================================== */
+
 
 .about-faq {
     position: relative;
@@ -720,9 +703,7 @@
     color: var(--color-muted);
 }
 
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
+
 
 @media (max-width: 1180px) {
 
@@ -880,10 +861,7 @@
     }
 }
 
-/* ==========================================================
-   ABOUT MODEL — PHOTO ROOF SCHEMATIC
-   no cards, no board, compact diagonal system
-   ========================================================== */
+
 
 .about-model-schematic {
     position: relative;
@@ -979,7 +957,7 @@
     width: fit-content;
 }
 
-/* schematic area */
+
 .about-model-schematic-map {
     position: relative;
     min-height: 430px;
@@ -1099,7 +1077,7 @@
     color: var(--color-accent-pale);
 }
 
-/* desktop positions */
+
 .node-1 {
     left: 5%;
     top: 7%;
@@ -1151,7 +1129,7 @@
     text-transform: uppercase;
 }
 
-/* hide previous model variants if they remain */
+
 .about-model-roofsplit-board,
 .about-model-roofrail,
 .about-model-boundary,
@@ -1159,7 +1137,7 @@
     display: none !important;
 }
 
-/* responsive */
+
 @media (max-width: 1180px) {
     .about-model-schematic {
         min-height: auto;
@@ -1221,10 +1199,7 @@
         transform: translateX(4px);
     }
 }
-/* ==========================================================
-   ABOUT STORY POINTS — COMPACT TABLET / MOBILE
-   Icons in top-right corner
-   ========================================================== */
+
 
 @media (max-width: 1180px) {
     .about-story-points {
@@ -1269,7 +1244,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 760px) {
     .about-story-points {
         grid-template-columns: 1fr !important;
@@ -1298,7 +1273,7 @@
     }
 }
 
-/* small mobile */
+
 @media (max-width: 420px) {
     .about-story-point {
         padding: 0.68rem 2.7rem 0.68rem 0.7rem !important;

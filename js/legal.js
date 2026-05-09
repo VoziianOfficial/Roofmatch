@@ -1,17 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   ROOFMATCH — LEGAL PAGE SCRIPT
-   File: /js/legal.js
 
-   Purpose:
-   - detect current legal page
-   - inject policy content from SITE_CONFIG.legalPages
-   - render legal sidebar links
-   - active legal link state
-   - subtle hero/CTA photo motion
-   - hover hooks
-   ========================================================== */
 
 (function () {
     const onReady = (callback) => {
@@ -47,9 +36,7 @@
         refreshIcons();
     });
 
-    /* =========================
-       HELPERS
-       ========================= */
+    
 
     function getCurrentFile() {
         const file = window.location.pathname.split("/").pop();
@@ -88,18 +75,14 @@
         });
     }
 
-    /* =========================
-       READY STATE
-       ========================= */
+    
 
     function initLegalReadyState(currentFile) {
         document.body.classList.add("is-legal-page", "is-legal-ready");
         document.body.dataset.legalPage = currentFile.replace(".html", "");
     }
 
-    /* =========================
-       CONTENT INJECTION
-       ========================= */
+    
 
     function injectLegalContent(legalPage, config, currentFile) {
         setText("[data-legal-kicker]", legalPage.kicker);
@@ -154,9 +137,7 @@
         markLegalPageLinks(currentFile);
     }
 
-    /* =========================
-       SIDEBAR
-       ========================= */
+    
 
     function renderLegalSidebar(config, currentFile) {
         const container = document.querySelector("[data-legal-sidebar-links]");
@@ -186,9 +167,7 @@
         });
     }
 
-    /* =========================
-       HERO PHOTO MOTION
-       ========================= */
+    
 
     function initLegalHeroMotion() {
         const hero = document.querySelector(".legal-hero");
@@ -244,9 +223,7 @@
         hero.addEventListener("pointerleave", reset);
     }
 
-    /* =========================
-       CTA PHOTO MOTION
-       ========================= */
+    
 
     function initLegalCtaMotion() {
         const cta = document.querySelector(".legal-cta");
@@ -302,9 +279,7 @@
         cta.addEventListener("pointerleave", reset);
     }
 
-    /* =========================
-       HOVER HOOKS
-       ========================= */
+    
 
     function initLegalInteractiveBlocks() {
         const blocks = document.querySelectorAll(

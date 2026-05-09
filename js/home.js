@@ -1,16 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   ROOFMATCH — HOME PAGE SCRIPT
-   File: /js/home.js
 
-   Purpose:
-   - subtle dark-premium hero motion
-   - full-background photo polish
-   - CTA background motion
-   - hover hooks for home sections
-   - safe reduced-motion behavior
-   ========================================================== */
 
 (function () {
     const onReady = (callback) => {
@@ -37,9 +27,7 @@
         document.body.classList.add("is-home-page", "is-home-ready");
     }
 
-    /* =========================
-       HERO BACKGROUND MOTION
-       ========================= */
+    
 
     function initHeroBackgroundMotion() {
         const hero = document.querySelector(".home-hero");
@@ -104,9 +92,7 @@
         hero.addEventListener("pointerleave", reset);
     }
 
-    /* =========================
-       CTA BACKGROUND MOTION
-       ========================= */
+    
 
     function initCtaBackgroundMotion() {
         const cta = document.querySelector(".home-cta");
@@ -162,9 +148,7 @@
         cta.addEventListener("pointerleave", reset);
     }
 
-    /* =========================
-       INTERACTIVE ROW HOOKS
-       ========================= */
+    
 
     function initInteractiveRows() {
         const rows = document.querySelectorAll(
@@ -186,9 +170,7 @@
         });
     }
 
-    /* =========================
-       SUBTLE POINTER GLOW
-       ========================= */
+    
 
     function initPointerGlow() {
         const glowTargets = document.querySelectorAll(

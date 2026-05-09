@@ -1,16 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   ROOFMATCH — GLOBAL CONFIG
-   File: /js/config.js
 
-   Brand direction:
-   Dark premium roofing aggregator.
-   Graphite / black base.
-   Bright orange / copper accents.
-   Full-photo roofline heroes.
-   Aggregator-safe wording only.
-   ========================================================== */
 
 window.SITE_CONFIG = {
     companyName: "RoofMatch",

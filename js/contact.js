@@ -1,17 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   ROOFMATCH — CONTACT PAGE SCRIPT
-   File: /js/contact.js
 
-   Purpose:
-   - contact page ready state
-   - client-side demo form validation
-   - success/error messaging
-   - subtle hero/CTA photo motion
-   - map/contact panel hover hooks
-   - safe reduced-motion behavior
-   ========================================================== */
 
 (function () {
     const onReady = (callback) => {
@@ -39,9 +28,7 @@
         document.body.classList.add("is-contact-page", "is-contact-ready");
     }
 
-    /* =========================
-       FORM VALIDATION
-       ========================= */
+    
 
     function initContactForm() {
         const form = document.querySelector("[data-contact-form]");
@@ -131,9 +118,7 @@
         });
     }
 
-    /* =========================
-       HERO PHOTO MOTION
-       ========================= */
+    
 
     function initContactHeroMotion() {
         const hero = document.querySelector(".contact-hero");
@@ -189,9 +174,7 @@
         hero.addEventListener("pointerleave", reset);
     }
 
-    /* =========================
-       BOTTOM CTA PHOTO MOTION
-       ========================= */
+    
 
     function initContactBottomMotion() {
         const section = document.querySelector(".contact-bottom");
@@ -247,9 +230,7 @@
         section.addEventListener("pointerleave", reset);
     }
 
-    /* =========================
-       MAP MOTION
-       ========================= */
+    
 
     function initContactMapMotion() {
         const mapCard = document.querySelector(".contact-map-card");
@@ -305,9 +286,7 @@
         mapCard.addEventListener("pointerleave", reset);
     }
 
-    /* =========================
-       HOVER HOOKS
-       ========================= */
+    
 
     function initContactInteractiveBlocks() {
         const blocks = document.querySelectorAll(

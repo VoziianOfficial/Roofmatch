@@ -1,15 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   ROOFMATCH — SERVICES PAGE SCRIPT
-   File: /js/services.js
 
-   Purpose:
-   - services page ready state
-   - subtle hero/CTA background motion
-   - category/process/checklist hover hooks
-   - safe reduced-motion behavior
-   ========================================================== */
 
 (function () {
     const onReady = (callback) => {
@@ -35,9 +26,7 @@
         document.body.classList.add("is-services-page", "is-services-ready");
     }
 
-    /* =========================
-       HERO BACKGROUND MOTION
-       ========================= */
+    
 
     function initServicesHeroMotion() {
         const hero = document.querySelector(".services-hero");
@@ -93,9 +82,7 @@
         hero.addEventListener("pointerleave", reset);
     }
 
-    /* =========================
-       CTA BACKGROUND MOTION
-       ========================= */
+    
 
     function initServicesCtaMotion() {
         const cta = document.querySelector(".services-cta");
@@ -151,9 +138,7 @@
         cta.addEventListener("pointerleave", reset);
     }
 
-    /* =========================
-       HOVER HOOKS
-       ========================= */
+    
 
     function initInteractiveServiceBlocks() {
         const blocks = document.querySelectorAll(

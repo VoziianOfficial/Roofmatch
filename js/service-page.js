@@ -1,17 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   ROOFMATCH — SERVICE DETAIL PAGE SCRIPT
-   File: /js/service-page.js
 
-   Purpose:
-   - detect current service page
-   - inject service-specific content
-   - render service FAQ + JSON-LD
-   - render related service cards
-   - subtle hero/final photo motion
-   - service page hover hooks
-   ========================================================== */
 
 (function () {
     const onReady = (callback) => {
@@ -48,9 +37,7 @@
         refreshIcons();
     });
 
-    /* =========================
-       HELPERS
-       ========================= */
+    
 
     function getCurrentFile() {
         const file = window.location.pathname.split("/").pop();
@@ -94,18 +81,14 @@
         });
     }
 
-    /* =========================
-       READY STATE
-       ========================= */
+    
 
     function initServicePageReadyState(service) {
         document.body.classList.add("is-service-page", "is-service-ready");
         document.body.dataset.serviceId = service.id;
     }
 
-    /* =========================
-       CONTENT INJECTION
-       ========================= */
+    
 
     function injectServiceContent(service, config) {
         setText("[data-service-kicker]", service.pageKicker || service.kicker);
@@ -230,9 +213,7 @@
         ];
     }
 
-    /* =========================
-       EVALUATION LIST
-       ========================= */
+    
 
     function renderServiceEvaluation(service) {
         const list = document.querySelector("[data-service-evaluation-list]");
@@ -252,9 +233,7 @@
             .join("");
     }
 
-    /* =========================
-       SERVICE FAQ
-       ========================= */
+    
 
     function renderServiceFaq(service) {
         const container = document.querySelector("[data-service-faq-list]");
@@ -347,9 +326,7 @@
         document.head.appendChild(script);
     }
 
-    /* =========================
-       RELATED SERVICES
-       ========================= */
+    
 
     function renderRelatedServices(currentService, config) {
         const container = document.querySelector("[data-related-services]");
@@ -390,9 +367,7 @@
             .join("");
     }
 
-    /* =========================
-       HERO MOTION
-       ========================= */
+    
 
     function initServiceHeroMotion() {
         const hero = document.querySelector(".service-hero");
@@ -448,9 +423,7 @@
         hero.addEventListener("pointerleave", reset);
     }
 
-    /* =========================
-       FINAL CTA MOTION
-       ========================= */
+    
 
     function initServiceFinalMotion() {
         const section = document.querySelector(".service-final");
@@ -506,9 +479,7 @@
         section.addEventListener("pointerleave", reset);
     }
 
-    /* =========================
-       HOVER HOOKS
-       ========================= */
+    
 
     function initServiceInteractiveBlocks() {
         const blocks = document.querySelectorAll(

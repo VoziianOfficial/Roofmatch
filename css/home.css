@@ -1,15 +1,7 @@
-/* ==========================================================
-   ROOFMATCH — HOME PAGE
-   Dark premium roofing / orange-copper energy
-   File: /css/home.css
-   ========================================================== */
 
-/* ==========================================================
-   HOME HERO — FULL BACKGROUND PHOTO, NO CARD-IN-CARD
-   ========================================================== */
-/* ==========================================================
-   HOME HERO — SPLIT ROOF PHOTO / NO ASIDE CARD
-   ========================================================== */
+
+
+
 
 .home-hero {
     position: relative;
@@ -89,7 +81,7 @@
     pointer-events: none;
 }
 
-/* центральная roof-slope полоса между текстом и фото */
+
 .home-hero-slope {
     position: absolute;
     top: 0;
@@ -228,15 +220,13 @@
         linear-gradient(90deg, transparent, rgba(251, 146, 60, 0.3), transparent);
 }
 
-/* убрать старую aside-карточку, если она где-то осталась */
+
 .home-hero-aside,
 .home-hero-proof {
     display: none !important;
 }
 
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
+
 
 @media (max-width: 1180px) {
     .home-hero {
@@ -372,9 +362,7 @@
     }
 }
 
-/* ==========================================================
-   SERVICE STRIP
-   ========================================================== */
+
 
 .home-service-strip {
     position: relative;
@@ -454,9 +442,7 @@
     gap: 0.75rem;
 }
 
-/* ==========================================================
-   DARK EDITORIAL MODEL SECTION
-   ========================================================== */
+
 
 .home-model {
     position: relative;
@@ -629,9 +615,7 @@
     border-color: var(--color-accent);
 }
 
-/* ==========================================================
-   COMPARISON FACTORS — STRONG DARK SECTION
-   ========================================================== */
+
 
 .home-factors {
     position: relative;
@@ -832,9 +816,7 @@
     color: var(--color-accent-pale);
 }
 
-/* ==========================================================
-   PHOTO SERVICE CARDS SHOWCASE
-   ========================================================== */
+
 
 .home-services-showcase {
     position: relative;
@@ -894,9 +876,7 @@
     margin-top: 2rem;
 }
 
-/* ==========================================================
-   ORANGE CTA — FULL PHOTO SECTION
-   ========================================================== */
+
 
 .home-cta {
     position: relative;
@@ -1042,9 +1022,7 @@
     line-height: 1.5;
 }
 
-/* ==========================================================
-   FAQ
-   ========================================================== */
+
 
 .home-faq {
     position: relative;
@@ -1132,9 +1110,7 @@
     box-shadow: var(--shadow-card);
 }
 
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
+
 
 @media (min-width: 1600px) {
 
@@ -1495,17 +1471,15 @@
     }
 }
 
-/* ==========================================================
-   HERO PHOTO POSITION OVERRIDE — PUT AT VERY END
-   ========================================================== */
 
-/* Desktop / laptop */
+
+
 .home-hero .home-hero-bg img {
     object-position: 8% center !important;
     transform: scale(1.12) translateX(-5%) !important;
 }
 
-/* Tablet */
+
 @media (max-width: 900px) {
     .home-hero .home-hero-bg img {
         object-position: -11% center !important;
@@ -1513,7 +1487,7 @@
     }
 }
 
-/* Mobile */
+
 @media (max-width: 760px) {
     .home-hero .home-hero-bg img {
         object-position: 12% center !important;
@@ -1521,7 +1495,7 @@
     }
 }
 
-/* Small mobile */
+
 @media (max-width: 420px) {
     .home-hero .home-hero-bg img {
         object-position: 26% center !important;
@@ -1529,10 +1503,7 @@
     }
 }
 
-/* ==========================================================
-   HOME HERO TITLE — FORCE DESKTOP 3-LINE FEEL
-   PUT AT THE VERY END OF home.css
-   ========================================================== */
+
 
 .home-hero-copy h1 {
     max-width: 790px !important;
@@ -1542,7 +1513,7 @@
     text-wrap: balance;
 }
 
-/* laptop */
+
 @media (max-width: 1280px) {
     .home-hero-copy h1 {
         max-width: 740px !important;
@@ -1550,7 +1521,7 @@
     }
 }
 
-/* tablet */
+
 @media (max-width: 900px) {
     .home-hero-copy h1 {
         max-width: 680px !important;
@@ -1559,7 +1530,7 @@
     }
 }
 
-/* mobile */
+
 @media (max-width: 760px) {
     .home-hero-copy h1 {
         max-width: 100% !important;
@@ -1569,10 +1540,7 @@
     }
 }
 
-/* ==========================================================
-   HOME FACTORS — CINEMATIC PHOTO SECTION
-   photo-first, compact, roofline overlay markers
-   ========================================================== */
+
 
 .home-factors-cinematic {
     position: relative;
@@ -1641,7 +1609,7 @@
     margin-top: 0.25rem;
 }
 
-/* photo panel */
+
 .home-factors-cinematic-photo {
     position: relative;
     min-height: clamp(390px, 43vw, 560px);
@@ -1682,7 +1650,7 @@
     pointer-events: none;
 }
 
-/* orange roofline strip */
+
 .home-factors-roofline-strip {
     position: absolute;
     left: 0;
@@ -1724,7 +1692,7 @@
     opacity: 0.48;
 }
 
-/* overlay factor markers */
+
 .home-factor-marker {
     position: absolute;
     z-index: 4;
@@ -1822,7 +1790,7 @@
     color: var(--color-accent-pale);
 }
 
-/* marker positions */
+
 .marker-service {
     left: 8%;
     top: 12%;
@@ -1848,7 +1816,7 @@
     bottom: 26%;
 }
 
-/* large verification overlay */
+
 .home-factors-verification {
     position: absolute;
     right: 1rem;
@@ -1924,7 +1892,7 @@
         rgba(13, 17, 20, 0.86);
 }
 
-/* responsive */
+
 @media (max-width: 1180px) {
     .home-factors-cinematic-inner {
         grid-template-columns: 1fr;

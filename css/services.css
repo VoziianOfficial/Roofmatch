@@ -1,13 +1,6 @@
-/* ==========================================================
-   ROOFMATCH — SERVICES PAGE
-   Dark copper roofing category system
-   File: /css/services.css
-   ========================================================== */
 
-/* ==========================================================
-   SERVICES HERO
-   Uses global .services-hero photo hero system from style.css
-   ========================================================== */
+
+
 
 .services-hero {
     background: var(--color-bg);
@@ -46,9 +39,7 @@
     color: var(--color-accent-light);
 }
 
-/* ==========================================================
-   CATEGORY OVERVIEW
-   ========================================================== */
+
 
 .services-overview {
     position: relative;
@@ -105,9 +96,7 @@
     left: auto;
 }
 
-/* ==========================================================
-   MATCHING PROCESS
-   ========================================================== */
+
 
 .services-process {
     position: relative;
@@ -295,9 +284,7 @@
     color: var(--color-accent-pale);
 }
 
-/* ==========================================================
-   PROVIDER CHECKLIST
-   ========================================================== */
+
 
 .services-checklist {
     position: relative;
@@ -422,9 +409,7 @@
     color: var(--color-heading);
 }
 
-/* ==========================================================
-   SERVICES CTA
-   ========================================================== */
+
 
 .services-cta {
     position: relative;
@@ -552,9 +537,7 @@
     line-height: 1.5;
 }
 
-/* ==========================================================
-   SERVICES FAQ
-   ========================================================== */
+
 
 .services-faq {
     position: relative;
@@ -598,9 +581,7 @@
     color: var(--color-muted);
 }
 
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
+
 
 @media (max-width: 1180px) {
 
@@ -768,9 +749,7 @@
     }
 }
 
-/* ==========================================================
-   SERVICES CHECKLIST — ROOF VERIFICATION BOARD
-   ========================================================== */
+
 
 .services-checklist-board {
     position: relative;
@@ -815,7 +794,7 @@
     align-items: stretch;
 }
 
-/* left photo */
+
 .services-checklist-media {
     position: relative;
     min-height: clamp(420px, 42vw, 560px);
@@ -920,7 +899,7 @@
     opacity: 0.46;
 }
 
-/* right content */
+
 .services-checklist-content {
     position: relative;
     display: grid;
@@ -1126,7 +1105,7 @@
     color: var(--color-accent-light);
 }
 
-/* responsive */
+
 @media (max-width: 1180px) {
     .services-checklist-board-inner {
         grid-template-columns: 1fr;
@@ -1207,9 +1186,7 @@
     }
 }
 
-/* ==========================================================
-   SERVICES FAQ — DESKTOP COPY BALANCE
-   ========================================================== */
+
 
 @media (min-width: 1181px) {
     .services-faq-copy {
@@ -1231,7 +1208,7 @@
     }
 }
 
-/* Hide services FAQ intro paragraph on tablet and mobile */
+
 @media (max-width: 1180px) {
     .services-faq-copy p {
         display: none;

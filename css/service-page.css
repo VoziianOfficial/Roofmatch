@@ -1,13 +1,6 @@
-/* ==========================================================
-   ROOFMATCH — SERVICE DETAIL PAGES
-   Dark copper roofing service template
-   File: /css/service-page.css
-   ========================================================== */
 
-/* ==========================================================
-   SERVICE HERO
-   Uses global .service-hero photo hero system from style.css
-   ========================================================== */
+
+
 
 .service-hero {
     background: var(--color-bg);
@@ -46,9 +39,7 @@
     color: var(--color-accent-light);
 }
 
-/* ==========================================================
-   SERVICE CONTEXT
-   ========================================================== */
+
 
 .service-context {
     position: relative;
@@ -214,9 +205,7 @@
     border-color: var(--color-accent);
 }
 
-/* ==========================================================
-   PROVIDER EVALUATION
-   ========================================================== */
+
 
 .service-evaluation {
     position: relative;
@@ -384,9 +373,7 @@
     border-color: var(--color-accent);
 }
 
-/* ==========================================================
-   MATCHING PROCESS
-   ========================================================== */
+
 
 .service-process {
     position: relative;
@@ -542,9 +529,7 @@
     border-color: var(--color-accent);
 }
 
-/* ==========================================================
-   SERVICE CTA + FAQ
-   ========================================================== */
+
 
 .service-final {
     position: relative;
@@ -692,9 +677,7 @@
     font-size: 0.95rem;
 }
 
-/* ==========================================================
-   SERVICE RELATED
-   ========================================================== */
+
 
 .service-related {
     position: relative;
@@ -728,9 +711,7 @@
     gap: 0.85rem;
 }
 
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
+
 
 @media (max-width: 1180px) {
 
@@ -904,10 +885,7 @@
     }
 }
 
-/* ==========================================================
-   SERVICE RELATED — COMPACT ROOFING ATLAS
-   Replaces empty related categories section
-   ========================================================== */
+
 
 .service-related-atlas {
     position: relative;
@@ -1064,7 +1042,7 @@
     opacity: 0.6;
 }
 
-/* related dynamic grid */
+
 .service-related-atlas .service-related-grid {
     position: relative;
     z-index: 2;
@@ -1074,7 +1052,7 @@
     align-items: stretch;
 }
 
-/* If JS renders global service-image-card */
+
 .service-related-atlas .service-image-card {
     min-height: 260px;
     height: 100%;
@@ -1107,14 +1085,14 @@
     height: 16px;
 }
 
-/* If JS renders links/cards with another class */
+
 .service-related-atlas .service-related-grid>a,
 .service-related-atlas .service-related-grid>article {
     min-height: 240px;
     border-color: rgba(255, 255, 255, 0.12);
 }
 
-/* fallback for generic direct children */
+
 .service-related-atlas .service-related-grid>* {
     position: relative;
     overflow: hidden;
@@ -1130,14 +1108,12 @@
     box-shadow: var(--shadow-card);
 }
 
-/* remove old empty feel */
+
 .service-related-atlas .section-header {
     margin-bottom: 0;
 }
 
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
+
 
 @media (max-width: 1180px) {
     .service-related-atlas-inner {
@@ -1211,10 +1187,7 @@
 }
 
 
-/* ==========================================================
-   SERVICE EVALUATION — ROOF DECISION BOARD
-   Compact, balanced, non-repetitive service section
-   ========================================================== */
+
 
 .service-evaluation-ridge {
     position: relative;
@@ -1301,7 +1274,7 @@
     pointer-events: none;
 }
 
-/* left copy */
+
 .service-evaluation-ridge-copy {
     position: relative;
     z-index: 2;
@@ -1337,7 +1310,7 @@
     line-height: 1.55;
 }
 
-/* center photo blade */
+
 .service-evaluation-ridge-photo {
     position: relative;
     z-index: 2;
@@ -1418,7 +1391,7 @@
     text-transform: uppercase;
 }
 
-/* right list */
+
 .service-evaluation-ridge .service-evaluation-list,
 .service-evaluation-ridge-list {
     position: relative;
@@ -1523,14 +1496,12 @@
     border-color: var(--color-accent-light);
 }
 
-/* hide old roofline only inside this new section */
+
 .service-evaluation-ridge .service-evaluation-roofline {
     display: none;
 }
 
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
+
 
 @media (max-width: 1180px) {
     .service-evaluation-ridge-shell {
@@ -1593,9 +1564,7 @@
     }
 }
 
-/* ==========================================================
-   SERVICE HERO — DESKTOP CENTERED PREMIUM LAYOUT
-   ========================================================== */
+
 
 @media (min-width: 1024px) {
     .service-hero {
@@ -1677,9 +1646,7 @@
         opacity: 0.5 !important;
     }
 }
-/* ==========================================================
-   SERVICE HERO — WIDER 2-LINE DESKTOP TITLE
-   ========================================================== */
+
 
 @media (min-width: 1024px) {
     .service-hero .service-hero-inner {
@@ -1728,10 +1695,7 @@
     }
 }
 
-/* ==========================================================
-   SERVICE PROCESS — TABLET / MOBILE COMPACT CARDS
-   Icons top-right, smaller card height
-   ========================================================== */
+
 
 @media (max-width: 1180px) {
     .service-process-grid {
@@ -1842,16 +1806,14 @@
     }
 }
 
-/* Hide one evaluation card on tablet only */
+
 @media (min-width: 761px) and (max-width: 1180px) {
     .service-evaluation-list .service-evaluation-item:nth-child(5) {
         display: none !important;
     }
 }
 
-/* ==========================================================
-   SERVICE EVALUATION RIDGE — MOBILE EQUAL COMPACT CARDS
-   ========================================================== */
+
 
 @media (max-width: 760px) {
 

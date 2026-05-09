@@ -1,15 +1,6 @@
 "use strict";
 
-/* ==========================================================
-   ROOFMATCH — ABOUT PAGE SCRIPT
-   File: /js/about.js
 
-   Purpose:
-   - about page ready state
-   - subtle hero/CTA photo motion
-   - story/model/clarity hover hooks
-   - safe reduced-motion behavior
-   ========================================================== */
 
 (function () {
     const onReady = (callback) => {
@@ -36,9 +27,7 @@
         document.body.classList.add("is-about-page", "is-about-ready");
     }
 
-    /* =========================
-       HERO PHOTO MOTION
-       ========================= */
+    
 
     function initAboutHeroMotion() {
         const hero = document.querySelector(".about-hero");
@@ -94,9 +83,7 @@
         hero.addEventListener("pointerleave", reset);
     }
 
-    /* =========================
-       CTA PHOTO MOTION
-       ========================= */
+    
 
     function initAboutCtaMotion() {
         const cta = document.querySelector(".about-cta");
@@ -152,9 +139,7 @@
         cta.addEventListener("pointerleave", reset);
     }
 
-    /* =========================
-       STORY MEDIA MOTION
-       ========================= */
+    
 
     function initAboutMediaMotion() {
         const media = document.querySelector(".about-story-media");
@@ -171,9 +156,7 @@
         });
     }
 
-    /* =========================
-       HOVER HOOKS
-       ========================= */
+    
 
     function initAboutInteractiveBlocks() {
         const blocks = document.querySelectorAll(

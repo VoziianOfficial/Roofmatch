@@ -1,13 +1,6 @@
-/* ==========================================================
-   ROOFMATCH — CONTACT PAGE
-   Dark copper request form / contact panel / map card
-   File: /css/contact.css
-   ========================================================== */
 
-/* ==========================================================
-   CONTACT HERO
-   Uses global .contact-hero photo hero system from style.css
-   ========================================================== */
+
+
 
 .contact-hero {
     background: var(--color-bg);
@@ -46,9 +39,7 @@
     color: var(--color-accent-light);
 }
 
-/* ==========================================================
-   REQUEST SECTION
-   ========================================================== */
+
 
 .contact-request {
     position: relative;
@@ -144,9 +135,7 @@
     color: var(--color-accent-light);
 }
 
-/* ==========================================================
-   CONTACT SIDE PANEL
-   ========================================================== */
+
 
 .contact-side {
     position: sticky;
@@ -280,9 +269,7 @@
     line-height: 1.55;
 }
 
-/* ==========================================================
-   MAP CARD
-   ========================================================== */
+
 
 .contact-map-card {
     position: relative;
@@ -404,9 +391,7 @@
         0 22px 56px rgba(249, 115, 22, 0.38);
 }
 
-/* ==========================================================
-   CONTACT CTA / DISCLAIMER
-   ========================================================== */
+
 
 .contact-bottom {
     position: relative;
@@ -534,9 +519,7 @@
     line-height: 1.5;
 }
 
-/* ==========================================================
-   CONTACT FAQ
-   ========================================================== */
+
 
 .contact-faq {
     position: relative;
@@ -580,9 +563,7 @@
     color: var(--color-muted);
 }
 
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
+
 
 @media (max-width: 1180px) {
 
@@ -722,9 +703,7 @@
     }
 }
 
-/* ==========================================================
-   CONTACT MINI REQUEST — COMPACT / DIFFERENT / NO HUGE CARDS
-   ========================================================== */
+
 
 .contact-mini-request {
     position: relative;
@@ -754,7 +733,7 @@
     align-items: stretch;
 }
 
-/* left compact form */
+
 .contact-mini-form-card {
     position: relative;
     overflow: hidden;
@@ -782,7 +761,7 @@
     box-shadow: 0 0 30px rgba(249, 115, 22, 0.3);
 }
 
-/* side roof cut */
+
 .contact-mini-form-card::after {
     content: "";
     position: absolute;
@@ -890,7 +869,7 @@
     font-size: 0.68rem;
 }
 
-/* right photo blueprint */
+
 .contact-mini-guide {
     position: relative;
     overflow: hidden;
@@ -1008,9 +987,7 @@
     border-color: rgba(249, 115, 22, 0.36);
 }
 
-/* ==========================================================
-   CONTACT MINI LOCATION — MATCHED COMPACT CARDS
-   ========================================================== */
+
 
 .contact-mini-location {
     position: relative;
@@ -1094,7 +1071,7 @@
     box-shadow: var(--shadow-strong);
 }
 
-/* compact map */
+
 .contact-mini-map {
     display: grid;
     align-content: end;
@@ -1206,7 +1183,7 @@
     line-height: 1.4;
 }
 
-/* compact info with photo */
+
 .contact-mini-info {
     display: grid;
     grid-template-columns: minmax(160px, 0.78fr) minmax(0, 1fr);
@@ -1301,9 +1278,7 @@
     border-color: rgba(249, 115, 22, 0.28);
 }
 
-/* ==========================================================
-   RESPONSIVE
-   ========================================================== */
+
 
 @media (max-width: 1180px) {
     .contact-mini-request-inner {
@@ -1433,9 +1408,7 @@
     }
 }
 
-/* ==========================================================
-   CONTACT LOCATION BOARD — COMPACT ROOFLINE CONTACT SECTION
-   ========================================================== */
+
 
 .contact-location-board {
     position: relative;
@@ -1500,7 +1473,7 @@
     box-shadow: 0 0 30px rgba(249, 115, 22, 0.3);
 }
 
-/* map panel */
+
 .contact-location-map-panel {
     position: relative;
     display: grid;
@@ -1623,7 +1596,7 @@
     line-height: 1.4;
 }
 
-/* info panel */
+
 .contact-location-info-panel {
     position: relative;
     display: grid;
@@ -1735,7 +1708,7 @@
     line-height: 1.45;
 }
 
-/* photo panel */
+
 .contact-location-photo-panel {
     position: relative;
     min-height: 350px;
@@ -1805,7 +1778,7 @@
     color: var(--color-accent-light);
 }
 
-/* responsive */
+
 @media (max-width: 1180px) {
     .contact-location-board-head {
         margin-inline: auto;
@@ -1873,9 +1846,7 @@
     }
 }
 
-/* ==========================================================
-   CONTACT MINI FORM HEAD — PHOTO BACKGROUND
-   ========================================================== */
+
 
 .contact-mini-form-head {
     position: relative;
@@ -1930,9 +1901,7 @@
 .contact-mini-form-head p {
     color: rgba(212, 203, 193, 0.9);
 }
-/* ==========================================================
-   CONTACT MINI GUIDE — MOBILE COMPACT EQUAL CARDS
-   ========================================================== */
+
 
 @media (max-width: 760px) {
     .contact-mini-guide-list {
