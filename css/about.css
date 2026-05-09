@@ -744,6 +744,60 @@
         min-height: 460px;
     }
 
+    .about-story-copy,
+    .about-model-copy,
+    .about-clarity-copy,
+    .about-cta-copy,
+    .about-faq-copy {
+        justify-items: center;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .about-story-copy .eyebrow,
+    .about-model-copy .eyebrow,
+    .about-clarity-copy .eyebrow,
+    .about-cta-copy .eyebrow,
+    .about-faq-copy .eyebrow,
+    .about-story-copy .kicker,
+    .about-model-copy .kicker,
+    .about-clarity-copy .kicker,
+    .about-cta-copy .kicker,
+    .about-faq-copy .kicker,
+    .about-story-copy .section-kicker,
+    .about-model-copy .section-kicker,
+    .about-clarity-copy .section-kicker,
+    .about-cta-copy .section-kicker,
+    .about-faq-copy .section-kicker {
+        margin-inline: auto;
+    }
+
+    .about-story-copy h2,
+    .about-model-copy h2,
+    .about-clarity-copy h2,
+    .about-cta-copy h2,
+    .about-faq-copy h2 {
+        max-width: min(34ch, 100%);
+        margin-inline: auto;
+    }
+
+    .about-story-copy p,
+    .about-model-copy p,
+    .about-clarity-copy p,
+    .about-cta-copy p,
+    .about-faq-copy p {
+        max-width: min(62ch, 100%);
+        margin-inline: auto;
+    }
+
+    .about-cta-copy::before {
+        margin-inline: auto;
+    }
+
+    .about-cta-actions {
+        justify-content: center;
+    }
+
     .about-cta-note {
         max-width: 620px;
     }

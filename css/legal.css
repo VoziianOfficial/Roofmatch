@@ -437,6 +437,36 @@
         max-width: none;
     }
 
+    .legal-cta-copy {
+        justify-items: center;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .legal-cta-copy .eyebrow,
+    .legal-cta-copy .kicker,
+    .legal-cta-copy .section-kicker {
+        margin-inline: auto;
+    }
+
+    .legal-cta-copy h2 {
+        max-width: min(34ch, 100%);
+        margin-inline: auto;
+    }
+
+    .legal-cta-copy p {
+        max-width: min(62ch, 100%);
+        margin-inline: auto;
+    }
+
+    .legal-cta-copy::before {
+        margin-inline: auto;
+    }
+
+    .legal-cta-actions {
+        justify-content: center;
+    }
+
     .legal-cta-note {
         max-width: 620px;
     }

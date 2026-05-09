@@ -626,6 +626,58 @@
         top: auto;
     }
 
+    .services-process-copy,
+    .services-checklist-copy,
+    .services-cta-copy,
+    .services-faq-copy {
+        justify-items: center;
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .services-process-copy .eyebrow,
+    .services-checklist-copy .eyebrow,
+    .services-cta-copy .eyebrow,
+    .services-faq-copy .eyebrow,
+    .services-process-copy .kicker,
+    .services-checklist-copy .kicker,
+    .services-cta-copy .kicker,
+    .services-faq-copy .kicker,
+    .services-process-copy .section-kicker,
+    .services-checklist-copy .section-kicker,
+    .services-cta-copy .section-kicker,
+    .services-faq-copy .section-kicker {
+        margin-inline: auto;
+    }
+
+    .services-process-copy h2,
+    .services-checklist-copy h2,
+    .services-cta-copy h2,
+    .services-faq-copy h2 {
+        max-width: min(34ch, 100%);
+        margin-inline: auto;
+    }
+
+    .services-process-copy p,
+    .services-checklist-copy p,
+    .services-cta-copy p,
+    .services-faq-copy p {
+        max-width: min(62ch, 100%);
+        margin-inline: auto;
+    }
+
+    .services-process-roofline {
+        margin-inline: auto;
+    }
+
+    .services-cta-copy::before {
+        margin-inline: auto;
+    }
+
+    .services-cta-actions {
+        justify-content: center;
+    }
+
     .services-process-step:nth-child(even),
     .services-process-step:nth-child(even):hover {
         transform: none;
@@ -713,5 +765,444 @@
     .services-checklist-item span:first-child {
         width: 32px;
         height: 32px;
+    }
+}
+
+/* ==========================================================
+   SERVICES CHECKLIST — ROOF VERIFICATION BOARD
+   ========================================================== */
+
+.services-checklist-board {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3rem, 5vw, 5rem);
+    background:
+        radial-gradient(circle at 12% 12%, rgba(249, 115, 22, 0.18), transparent 27rem),
+        linear-gradient(135deg, #080a0c 0%, #141b21 54%, #090b0d 100%);
+}
+
+.services-checklist-board::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(128deg, transparent 0 48%, rgba(249, 115, 22, 0.13) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.07), transparent 46%);
+}
+
+.services-checklist-board::after {
+    content: "";
+    position: absolute;
+    right: -12vw;
+    bottom: -10vw;
+    width: min(48vw, 720px);
+    aspect-ratio: 1.7;
+    transform: rotate(-8deg);
+    border: 1px solid rgba(249, 115, 22, 0.16);
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.14) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(251, 146, 60, 0.08), transparent);
+    pointer-events: none;
+}
+
+.services-checklist-board-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(300px, 0.72fr) minmax(0, 0.95fr);
+    gap: clamp(1rem, 3vw, 2.4rem);
+    align-items: stretch;
+}
+
+/* left photo */
+.services-checklist-media {
+    position: relative;
+    min-height: clamp(420px, 42vw, 560px);
+    overflow: hidden;
+    background: var(--color-dark);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-strong);
+    clip-path: polygon(8% 0, 100% 0, 100% 88%, 91% 100%, 0 100%, 0 12%);
+}
+
+.services-checklist-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(1.18) contrast(1.14) brightness(0.72);
+    transform: scale(1.03);
+    transition:
+        transform var(--transition-slow),
+        filter var(--transition-slow);
+}
+
+.services-checklist-media::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(90deg, rgba(8, 10, 12, 0.72), rgba(8, 10, 12, 0.16) 48%, rgba(8, 10, 12, 0.62)),
+        linear-gradient(180deg, rgba(8, 10, 12, 0.05), rgba(8, 10, 12, 0.82)),
+        radial-gradient(circle at 20% 22%, rgba(249, 115, 22, 0.3), transparent 20rem);
+    pointer-events: none;
+}
+
+.services-checklist-media:hover img {
+    transform: scale(1.07) translateX(6px);
+    filter: saturate(1.32) contrast(1.18) brightness(0.86);
+}
+
+.services-checklist-media-badge {
+    position: absolute;
+    left: 1rem;
+    bottom: 1rem;
+    z-index: 3;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0.66rem 0.78rem;
+    color: #111111;
+    background: linear-gradient(135deg, var(--color-accent-light), var(--color-accent));
+    border: 1px solid rgba(251, 146, 60, 0.9);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    box-shadow: 0 18px 42px rgba(249, 115, 22, 0.34);
+}
+
+.services-checklist-media-badge svg {
+    width: 16px;
+    height: 16px;
+}
+
+.services-checklist-roofline {
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 2;
+    height: 90px;
+    pointer-events: none;
+    background:
+        linear-gradient(158deg, transparent 0 48%, rgba(249, 115, 22, 0.46) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.22), transparent 48%, rgba(251, 146, 60, 0.18));
+}
+
+.services-checklist-roofline span {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--color-accent-light), transparent);
+    transform: rotate(-10deg);
+    opacity: 0.7;
+}
+
+.services-checklist-roofline span:nth-child(1) {
+    right: 8%;
+    bottom: 46px;
+    width: 230px;
+}
+
+.services-checklist-roofline span:nth-child(2) {
+    right: 24%;
+    bottom: 30px;
+    width: 160px;
+    opacity: 0.52;
+}
+
+.services-checklist-roofline span:nth-child(3) {
+    left: 8%;
+    bottom: 28px;
+    width: 190px;
+    opacity: 0.46;
+}
+
+/* right content */
+.services-checklist-content {
+    position: relative;
+    display: grid;
+    align-content: center;
+    gap: 1.1rem;
+    padding: clamp(1rem, 2vw, 1.35rem);
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.16), transparent 18rem),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.022)),
+        rgba(18, 24, 29, 0.92);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+}
+
+.services-checklist-content::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 24%;
+    left: -1px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.28);
+}
+
+.services-checklist-content::after {
+    content: "";
+    position: absolute;
+    right: -4rem;
+    top: 18%;
+    width: 230px;
+    aspect-ratio: 1.6;
+    transform: rotate(-10deg);
+    border: 1px solid rgba(249, 115, 22, 0.14);
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.14) 49%, transparent 50%);
+    pointer-events: none;
+}
+
+.services-checklist-content .services-checklist-copy {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 0.85rem;
+    max-width: 720px;
+}
+
+.services-checklist-content .services-checklist-copy h2 {
+    max-width: 680px;
+    font-size: clamp(1.65rem, 3vw, 2.65rem);
+    line-height: 1.08;
+    text-wrap: balance;
+}
+
+.services-checklist-content .services-checklist-copy p {
+    max-width: 640px;
+    color: var(--color-muted);
+    font-size: 0.96rem;
+}
+
+.services-checklist-lines {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 0.56rem;
+}
+
+.services-checkline {
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: 40px minmax(0, 1fr) 36px;
+    gap: 0.72rem;
+    align-items: center;
+    min-height: 62px;
+    padding: 0.64rem 0.72rem;
+    overflow: hidden;
+    background: rgba(255, 255, 255, 0.038);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition:
+        transform var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.services-checkline::before {
+    content: "";
+    position: absolute;
+    inset: -1px auto auto -1px;
+    width: 34%;
+    height: 2px;
+    transform: scaleX(0.26);
+    transform-origin: left;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+    transition: transform var(--transition-base);
+}
+
+.services-checkline::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: translateX(-102%);
+    background:
+        linear-gradient(105deg, rgba(249, 115, 22, 0.16), rgba(249, 115, 22, 0.04) 48%, transparent 72%);
+    transition: transform var(--transition-base);
+}
+
+.services-checkline-icon {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    color: var(--color-accent-light);
+    background: rgba(249, 115, 22, 0.12);
+    border: 1px solid rgba(249, 115, 22, 0.22);
+    transition:
+        color var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base),
+        transform var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.services-checkline-icon svg {
+    width: 17px;
+    height: 17px;
+    transition: transform var(--transition-base);
+}
+
+.services-checkline strong {
+    color: var(--color-text);
+    font-size: 0.9rem;
+    line-height: 1.28;
+    transition: color var(--transition-fast);
+}
+
+.services-checkline-number {
+    justify-self: end;
+    color: rgba(255, 237, 213, 0.42);
+    font-family: var(--font-heading);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    transition:
+        color var(--transition-base),
+        transform var(--transition-base);
+}
+
+.services-checkline:hover {
+    transform: translateX(5px);
+    background: rgba(249, 115, 22, 0.11);
+    border-color: rgba(249, 115, 22, 0.32);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+}
+
+.services-checkline:hover::before {
+    transform: scaleX(1);
+}
+
+.services-checkline:hover::after {
+    transform: translateX(0);
+}
+
+.services-checkline:hover .services-checkline-icon {
+    color: #111111;
+    transform: translateY(-2px) rotate(-2deg);
+    background: var(--color-accent);
+    border-color: var(--color-accent-light);
+    box-shadow: 0 12px 30px rgba(249, 115, 22, 0.28);
+}
+
+.services-checkline:hover .services-checkline-icon svg {
+    transform: scale(1.08);
+}
+
+.services-checkline:hover strong {
+    color: var(--color-accent-pale);
+}
+
+.services-checkline:hover .services-checkline-number {
+    color: var(--color-accent-light);
+    transform: translateX(-2px);
+}
+
+.services-checkline-strong {
+    min-height: 70px;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.18), transparent 12rem),
+        rgba(249, 115, 22, 0.08);
+    border-color: rgba(249, 115, 22, 0.25);
+}
+
+.services-checkline-strong .services-checkline-icon {
+    color: #111111;
+    background: var(--color-accent);
+    border-color: var(--color-accent-light);
+}
+
+.services-checkline-strong .services-checkline-number {
+    color: var(--color-accent-light);
+}
+
+/* responsive */
+@media (max-width: 1180px) {
+    .services-checklist-board-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .services-checklist-media {
+        min-height: 420px;
+    }
+
+    .services-checklist-content {
+        align-content: start;
+    }
+}
+
+@media (max-width: 760px) {
+    .services-checklist-board {
+        padding-block: 2.8rem;
+    }
+
+    .services-checklist-media {
+        min-height: 340px;
+        clip-path: polygon(5% 0, 100% 0, 100% 90%, 91% 100%, 0 100%, 0 10%);
+    }
+
+    .services-checklist-content {
+        padding: 0.9rem;
+    }
+
+    .services-checklist-content .services-checklist-copy {
+        text-align: center;
+        margin-inline: auto;
+    }
+
+    .services-checklist-content .services-checklist-copy h2,
+    .services-checklist-content .services-checklist-copy p {
+        margin-inline: auto;
+    }
+
+    .services-checklist-content .text-link {
+        justify-content: center;
+    }
+
+    .services-checkline {
+        grid-template-columns: 38px minmax(0, 1fr);
+        min-height: auto;
+        padding: 0.72rem;
+    }
+
+    .services-checkline-number {
+        display: none;
+    }
+
+    .services-checkline-icon {
+        width: 36px;
+        height: 36px;
+    }
+}
+
+@media (max-width: 420px) {
+    .services-checklist-media {
+        min-height: 300px;
+    }
+
+    .services-checkline {
+        grid-template-columns: 1fr;
+        gap: 0.55rem;
+    }
+
+    .services-checkline-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .services-checklist-media-badge {
+        left: 0.75rem;
+        bottom: 0.75rem;
+        font-size: 0.66rem;
     }
 }
