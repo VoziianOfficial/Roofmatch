@@ -37,6 +37,8 @@
             return;
         }
 
+        normalizeBrandConfig(config);
+
         ensureSkipLink();
         applyPageMeta(config);
         injectSharedHeader(config);
@@ -44,6 +46,7 @@
         applyDynamicConfigText(config);
         renderServiceCards(config);
         initFaqLists(config);
+        applyGlobalConfigReplacements(config);
         initPolicyBanner(config);
         initMobileMenu();
         refreshIcons();
@@ -90,6 +93,27 @@
     function refreshIcons() {
         if (window.lucide && typeof window.lucide.createIcons === "function") {
             window.lucide.createIcons();
+        }
+    }
+
+    function normalizeBrandConfig(config) {
+        if (!config || typeof config !== "object") return;
+        if (!config.companyName) return;
+
+        if (!config.brand || typeof config.brand !== "object") {
+            config.brand = {};
+        }
+
+        if (!config.brand.logoText) {
+            config.brand.logoText = config.companyName;
+        }
+
+        if (!config.brand.shortName) {
+            config.brand.shortName = config.companyName;
+        }
+
+        if (!config.brand.logoLabel) {
+            config.brand.logoLabel = `${config.companyName} home`;
         }
     }
 
@@ -232,7 +256,7 @@
               </svg>
             </span>
 
-            <span class="site-logo-text">${escapeHtml(config.brand.logoText)}</span>
+            <span class="site-logo-text" data-company-name>${escapeHtml(config.companyName)}</span>
           </a>
 
           <nav class="site-nav" aria-label="Primary navigation">
@@ -279,7 +303,7 @@
                 </svg>
               </span>
 
-              <span class="site-logo-text">${escapeHtml(config.brand.logoText)}</span>
+              <span class="site-logo-text" data-company-name>${escapeHtml(config.companyName)}</span>
             </a>
 
             <button class="mobile-menu-close" type="button" aria-label="Close menu" data-menu-close>
@@ -493,6 +517,147 @@
             const value = getNestedValue(config, path);
             element.textContent = value || "";
         });
+    }
+
+    /* =========================
+       GLOBAL CONFIG REPLACEMENTS
+       ========================= */
+
+    function applyGlobalConfigReplacements(config) {
+        if (!config) return;
+        if (!document.body) return;
+
+        const replacements = [
+            ["RoofMatch Provider Matching LLC", config.companyId],
+            ["RoofMatch is an independent provider matching platform and does not perform roofing work directly.", config.legalNotice],
+            ["1209 Orange Street, Wilmington, DE 19801, USA", config.address?.full],
+            ["USA roofing provider matching platform", config.serviceArea],
+            ["tel:+18007429186", config.phoneHref],
+            ["(800) 742-9186", config.phone],
+            ["hello@roofmatchplatform.com", config.email],
+            ["RoofMatch", config.companyName]
+        ].filter(([from, to]) => {
+            if (!from || typeof from !== "string") return false;
+            if (!to || typeof to !== "string") return false;
+            if (from === to) return false;
+            return true;
+        });
+
+        if (!replacements.length) return;
+
+        const shouldSkipElement = (element) => {
+            if (!element || element.nodeType !== Node.ELEMENT_NODE) return true;
+            return Boolean(element.closest("script,style,svg,template,noscript"));
+        };
+
+        const replaceAllInString = (value) => {
+            let nextValue = value;
+
+            replacements.forEach(([from, to]) => {
+                if (!nextValue.includes(from)) return;
+                nextValue = nextValue.replaceAll(from, to);
+            });
+
+            return nextValue;
+        };
+
+        const applyToTextNode = (textNode) => {
+            if (!textNode || textNode.nodeType !== Node.TEXT_NODE) return;
+
+            const parentElement = textNode.parentElement;
+            if (!parentElement || shouldSkipElement(parentElement)) return;
+
+            const original = textNode.nodeValue;
+            if (!original) return;
+
+            const updated = replaceAllInString(original);
+            if (updated !== original) {
+                textNode.nodeValue = updated;
+            }
+        };
+
+        const applyToAttributes = (root) => {
+            if (!root) return;
+
+            const attributeNames = ["href", "aria-label", "title", "alt", "content", "placeholder"];
+
+            const elements =
+                root.nodeType === Node.ELEMENT_NODE ? [root, ...root.querySelectorAll("*")] : [];
+
+            elements.forEach((element) => {
+                if (shouldSkipElement(element)) return;
+
+                attributeNames.forEach((attributeName) => {
+                    if (!element.hasAttribute(attributeName)) return;
+
+                    const original = element.getAttribute(attributeName);
+                    if (!original) return;
+
+                    const updated = replaceAllInString(original);
+                    if (updated !== original) {
+                        element.setAttribute(attributeName, updated);
+                    }
+                });
+            });
+        };
+
+        const applyToSubtree = (root) => {
+            if (!root) return;
+
+            if (root.nodeType === Node.TEXT_NODE) {
+                applyToTextNode(root);
+                return;
+            }
+
+            if (root.nodeType !== Node.ELEMENT_NODE) return;
+            if (shouldSkipElement(root)) return;
+
+            const walker = document.createTreeWalker(
+                root,
+                NodeFilter.SHOW_TEXT,
+                {
+                    acceptNode(node) {
+                        if (!node || node.nodeType !== Node.TEXT_NODE) return NodeFilter.FILTER_REJECT;
+
+                        const parentElement = node.parentElement;
+                        if (!parentElement || shouldSkipElement(parentElement)) return NodeFilter.FILTER_REJECT;
+
+                        const value = node.nodeValue;
+                        if (!value) return NodeFilter.FILTER_REJECT;
+
+                        for (const [from] of replacements) {
+                            if (value.includes(from)) {
+                                return NodeFilter.FILTER_ACCEPT;
+                            }
+                        }
+
+                        return NodeFilter.FILTER_REJECT;
+                    }
+                },
+                false
+            );
+
+            while (walker.nextNode()) {
+                applyToTextNode(walker.currentNode);
+            }
+
+            applyToAttributes(root);
+        };
+
+        applyToSubtree(document.body);
+
+        if (document.body.dataset.configReplacementsObserved === "true") return;
+        document.body.dataset.configReplacementsObserved = "true";
+
+        const mutationObserver = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                mutation.addedNodes.forEach((node) => {
+                    applyToSubtree(node);
+                });
+            });
+        });
+
+        mutationObserver.observe(document.body, { childList: true, subtree: true });
     }
 
     /* =========================
