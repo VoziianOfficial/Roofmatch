@@ -74,10 +74,13 @@
     box-sizing: border-box;
 }
 
-html,
-body {
+html {
     max-width: 100%;
     overflow-x: hidden;
+}
+
+body {
+    max-width: 100%;
 }
 
 html {
@@ -2706,4 +2709,22 @@ article:hover .icon-chip {
         transform: translateX(50%) !important;
         opacity: 0.5 !important;
     }
+}
+
+/* ==========================================================
+   FIX STICKY HEADER
+   Header is injected inside [data-site-header]
+   ========================================================== */
+
+[data-site-header] {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 3000 !important;
+    width: 100% !important;
+}
+
+[data-site-header] .site-header {
+    position: relative !important;
+    top: auto !important;
+    z-index: auto !important;
 }
