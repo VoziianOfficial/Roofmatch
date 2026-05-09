@@ -1694,8 +1694,8 @@
     .service-hero h1,
     .service-hero h1#serviceHeroTitle,
     .service-hero [data-service-title] {
-        width: min(100%, 18.8ch) !important;
-        max-width: 18.8ch !important;
+    width: min(100%, 20.5ch) !important;
+        max-width: 20.5ch !important;
         margin-inline: auto !important;
 
         font-size: clamp(2.85rem, 5.35vw, 5.45rem) !important;
