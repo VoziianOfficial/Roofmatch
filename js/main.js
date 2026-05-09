@@ -27,6 +27,9 @@
     };
 
     onReady(() => {
+        initScrollReveal();
+        initImageFallbacks();
+
         const config = window.SITE_CONFIG;
 
         if (!config) {
@@ -43,8 +46,6 @@
         initFaqLists(config);
         initPolicyBanner(config);
         initMobileMenu();
-        initScrollReveal();
-        initImageFallbacks();
         refreshIcons();
     });
 
@@ -892,12 +893,35 @@
        ========================= */
 
     function initScrollReveal() {
-        const elements = document.querySelectorAll(".reveal-up");
+        const root = document.querySelector("main") || document.body;
+        if (!root) return;
 
-        if (!elements.length) return;
+        const prefersReducedMotion =
+            window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-        if (!("IntersectionObserver" in window)) {
-            elements.forEach((element) => element.classList.add("is-visible"));
+        const makeVisible = (element) => {
+            if (!element || element.nodeType !== Node.ELEMENT_NODE) return;
+            element.classList.add("is-visible");
+        };
+
+        if (prefersReducedMotion || !("IntersectionObserver" in window)) {
+            root.querySelectorAll(".reveal-up").forEach(makeVisible);
+
+            const mutationObserver = new MutationObserver((mutations) => {
+                mutations.forEach((mutation) => {
+                    mutation.addedNodes.forEach((node) => {
+                        if (!node || node.nodeType !== Node.ELEMENT_NODE) return;
+
+                        if (node.classList.contains("reveal-up")) {
+                            makeVisible(node);
+                        }
+
+                        node.querySelectorAll?.(".reveal-up").forEach(makeVisible);
+                    });
+                });
+            });
+
+            mutationObserver.observe(root, { childList: true, subtree: true });
             return;
         }
 
@@ -916,7 +940,36 @@
             }
         );
 
-        elements.forEach((element) => observer.observe(element));
+        const observeElement = (element) => {
+            if (!element || element.nodeType !== Node.ELEMENT_NODE) return;
+            if (element.classList.contains("is-visible")) return;
+            if (element.dataset.revealObserved === "true") return;
+
+            element.dataset.revealObserved = "true";
+            observer.observe(element);
+        };
+
+        root.querySelectorAll(".reveal-up").forEach(observeElement);
+
+        const mutationObserver = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                mutation.addedNodes.forEach((node) => {
+                    if (!node || node.nodeType !== Node.ELEMENT_NODE) return;
+
+                    if (node.classList.contains("reveal-up")) {
+                        observeElement(node);
+                    }
+
+                    node.querySelectorAll?.(".reveal-up").forEach(observeElement);
+                });
+            });
+        });
+
+        mutationObserver.observe(root, { childList: true, subtree: true });
+
+        window.setTimeout(() => {
+            root.querySelectorAll(".reveal-up:not(.is-visible)").forEach(makeVisible);
+        }, 5000);
     }
 
     /* =========================
