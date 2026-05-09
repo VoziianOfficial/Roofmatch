@@ -1,0 +1,851 @@
+/* ==========================================================
+   ROOFMATCH — SERVICE DETAIL PAGES
+   Dark copper roofing service template
+   File: /css/service-page.css
+   ========================================================== */
+
+/* ==========================================================
+   SERVICE HERO
+   Uses global .service-hero photo hero system from style.css
+   ========================================================== */
+
+.service-hero {
+    background: var(--color-bg);
+}
+
+.service-hero .service-hero-inner {
+    max-width: 980px;
+}
+
+.service-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.72rem;
+    align-items: center;
+    margin-top: 0.35rem;
+}
+
+.service-hero-note {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    max-width: 720px;
+    margin-top: 0.3rem;
+    padding-top: 0.95rem;
+    color: var(--color-muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    border-top: 1px solid var(--color-border);
+}
+
+.service-hero-note svg {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin-top: 0.16rem;
+    color: var(--color-accent-light);
+}
+
+/* ==========================================================
+   SERVICE CONTEXT
+   ========================================================== */
+
+.service-context {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3.4rem, 5.8vw, 6rem);
+}
+
+.service-context::before {
+    content: "";
+    position: absolute;
+    right: -14vw;
+    top: 8%;
+    width: min(48vw, 720px);
+    aspect-ratio: 1.7;
+    transform: rotate(-9deg);
+    border: 1px solid rgba(249, 115, 22, 0.15);
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.14) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.08), transparent);
+    pointer-events: none;
+}
+
+.service-context::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 10%;
+    width: 44%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.38), transparent);
+    pointer-events: none;
+}
+
+.service-context-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(340px, 0.58fr);
+    gap: clamp(1.4rem, 4vw, 3rem);
+    align-items: start;
+}
+
+.service-context-copy {
+    display: grid;
+    gap: 1rem;
+    max-width: 800px;
+}
+
+.service-context-copy h2 {
+    max-width: 760px;
+    text-wrap: balance;
+}
+
+.service-context-copy p {
+    max-width: 700px;
+    color: var(--color-text);
+}
+
+.service-context-callout {
+    position: relative;
+    display: grid;
+    gap: 0.75rem;
+    padding: clamp(1rem, 2vw, 1.35rem);
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.16), transparent 18rem),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.024)),
+        var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+}
+
+.service-context-callout::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 22%;
+    left: -1px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+    box-shadow: 0 0 28px rgba(249, 115, 22, 0.26);
+}
+
+.service-context-callout small {
+    color: var(--color-accent-light);
+    font-size: 0.68rem;
+    line-height: 1;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.service-context-callout strong {
+    color: var(--color-heading);
+    font-family: var(--font-heading);
+    font-size: clamp(1.08rem, 2vw, 1.42rem);
+    line-height: 1.18;
+    letter-spacing: -0.04em;
+}
+
+.service-context-callout span {
+    color: var(--color-text);
+    font-size: 0.92rem;
+    line-height: 1.52;
+}
+
+.service-context-points {
+    display: grid;
+    gap: 0.58rem;
+    margin-top: 0.4rem;
+}
+
+.service-context-point {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    gap: 0.65rem;
+    align-items: start;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid transparent;
+    transition:
+        transform var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base);
+}
+
+.service-context-point span:first-child {
+    display: grid;
+    place-items: center;
+    width: 30px;
+    height: 30px;
+    color: var(--color-accent-light);
+    background: rgba(249, 115, 22, 0.12);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    transition:
+        color var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base),
+        transform var(--transition-base);
+}
+
+.service-context-point svg {
+    width: 15px;
+    height: 15px;
+}
+
+.service-context-point p {
+    color: var(--color-text);
+    font-size: 0.9rem;
+    line-height: 1.48;
+}
+
+.service-context-point:hover {
+    transform: translateX(4px);
+    background: rgba(249, 115, 22, 0.085);
+    border-color: rgba(249, 115, 22, 0.22);
+}
+
+.service-context-point:hover span:first-child {
+    color: #111111;
+    transform: translateY(-2px);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* ==========================================================
+   PROVIDER EVALUATION
+   ========================================================== */
+
+.service-evaluation {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3.4rem, 5.8vw, 6rem);
+    background:
+        radial-gradient(circle at 12% 0%, rgba(249, 115, 22, 0.18), transparent 30rem),
+        linear-gradient(135deg, #0b0d0f, #171e24 52%, #080a0c);
+}
+
+.service-evaluation::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.13) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.08), transparent 42%);
+}
+
+.service-evaluation-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(300px, 0.52fr) minmax(0, 0.98fr);
+    gap: clamp(1.4rem, 4vw, 3rem);
+    align-items: start;
+}
+
+.service-evaluation-copy {
+    position: sticky;
+    top: calc(var(--header-height) + 1rem);
+    display: grid;
+    gap: 1rem;
+}
+
+.service-evaluation-copy h2 {
+    max-width: 620px;
+}
+
+.service-evaluation-copy p {
+    max-width: 540px;
+    color: var(--color-muted);
+}
+
+.service-evaluation-roofline {
+    width: min(78%, 320px);
+    margin-top: 1rem;
+    color: rgba(255, 237, 213, 0.52);
+    filter: drop-shadow(0 0 22px rgba(249, 115, 22, 0.2));
+}
+
+.service-evaluation-roofline path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+}
+
+.service-evaluation-roofline .accent {
+    stroke: var(--color-accent-light);
+}
+
+.service-evaluation-list {
+    display: grid;
+    gap: 0.75rem;
+}
+
+.service-evaluation-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 56px 1fr;
+    gap: 1rem;
+    min-height: 106px;
+    padding: 1rem;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.022)),
+        rgba(18, 24, 29, 0.92);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base),
+        background var(--transition-base);
+}
+
+.service-evaluation-item::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 56px;
+    width: 30%;
+    height: 3px;
+    transform: scaleX(0.38);
+    transform-origin: left;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+    transition: transform var(--transition-base);
+}
+
+.service-evaluation-item::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, rgba(249, 115, 22, 0.12), transparent);
+    transition: transform var(--transition-base);
+}
+
+.service-evaluation-number {
+    display: grid;
+    place-items: center;
+    align-self: start;
+    width: 46px;
+    height: 46px;
+    color: var(--color-accent-light);
+    background: rgba(249, 115, 22, 0.12);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    font-family: var(--font-heading);
+    font-size: 0.82rem;
+    font-weight: 700;
+    transition:
+        color var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base),
+        transform var(--transition-base);
+}
+
+.service-evaluation-item p {
+    align-self: center;
+    color: var(--color-text);
+    font-size: 0.96rem;
+    line-height: 1.52;
+}
+
+.service-evaluation-item:nth-child(even) {
+    transform: translateX(1rem);
+}
+
+.service-evaluation-item:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-card);
+}
+
+.service-evaluation-item:nth-child(even):hover {
+    transform: translate(1rem, -6px);
+}
+
+.service-evaluation-item:hover::before {
+    transform: scaleX(1);
+}
+
+.service-evaluation-item:hover::after {
+    transform: translateX(0);
+}
+
+.service-evaluation-item:hover .service-evaluation-number {
+    color: #111111;
+    transform: translateY(-2px);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* ==========================================================
+   MATCHING PROCESS
+   ========================================================== */
+
+.service-process {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3.4rem, 5.8vw, 6rem);
+}
+
+.service-process::before {
+    content: "";
+    position: absolute;
+    right: -14vw;
+    top: 10%;
+    width: min(48vw, 720px);
+    aspect-ratio: 1.7;
+    transform: rotate(-9deg);
+    border: 1px solid rgba(249, 115, 22, 0.15);
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.14) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.08), transparent);
+    pointer-events: none;
+}
+
+.service-process-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.service-process-head {
+    display: grid;
+    grid-template-columns: minmax(0, 0.74fr) minmax(280px, 0.5fr);
+    gap: 1rem;
+    align-items: end;
+    margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.service-process-head h2 {
+    max-width: 740px;
+}
+
+.service-process-head p {
+    color: var(--color-muted);
+}
+
+.service-process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+.service-process-step {
+    position: relative;
+    display: grid;
+    gap: 0.75rem;
+    min-height: 250px;
+    padding: 1rem;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.12), transparent 15rem),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.022)),
+        var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-soft);
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base),
+        background var(--transition-base);
+}
+
+.service-process-step::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: -1px;
+    width: 48%;
+    height: 3px;
+    transform: scaleX(0.35);
+    transform-origin: left;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+    transition: transform var(--transition-base);
+}
+
+.service-process-step::after {
+    content: "";
+    position: absolute;
+    right: -4rem;
+    bottom: -4rem;
+    width: 160px;
+    aspect-ratio: 1.5;
+    transform: rotate(-10deg);
+    border: 1px solid rgba(249, 115, 22, 0.12);
+    pointer-events: none;
+}
+
+.service-process-icon {
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    color: var(--color-accent-light);
+    background: rgba(249, 115, 22, 0.12);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    transition:
+        color var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base),
+        transform var(--transition-base);
+}
+
+.service-process-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.service-process-step small {
+    color: var(--color-accent-light);
+    font-size: 0.68rem;
+    line-height: 1;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.service-process-step h3 {
+    color: var(--color-heading);
+    font-size: clamp(1.08rem, 1.8vw, 1.42rem);
+}
+
+.service-process-step p {
+    color: var(--color-muted);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.service-process-step:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-card);
+    background:
+        radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.18), transparent 15rem),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.026)),
+        var(--color-surface-2);
+}
+
+.service-process-step:hover::before {
+    transform: scaleX(1);
+}
+
+.service-process-step:hover .service-process-icon {
+    color: #111111;
+    transform: translateY(-2px);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+/* ==========================================================
+   SERVICE CTA + FAQ
+   ========================================================== */
+
+.service-final {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    color: var(--color-heading);
+    background: var(--color-dark);
+    clip-path: polygon(0 4vw, 100% 0, 100% 100%, 0 100%);
+}
+
+.service-final-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -5;
+}
+
+.service-final-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(1.18) contrast(1.12) brightness(0.55);
+}
+
+.service-final::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -4;
+    background:
+        linear-gradient(90deg, rgba(5, 6, 7, 0.93), rgba(5, 6, 7, 0.62) 58%, rgba(5, 6, 7, 0.86)),
+        radial-gradient(circle at 22% 25%, rgba(249, 115, 22, 0.38), transparent 27rem),
+        linear-gradient(180deg, rgba(5, 6, 7, 0.22), rgba(5, 6, 7, 0.94));
+}
+
+.service-final-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.78fr) minmax(360px, 0.72fr);
+    gap: clamp(1.4rem, 4vw, 3rem);
+    align-items: start;
+    padding-block: clamp(5rem, 8vw, 7rem) clamp(3.8rem, 6vw, 5.5rem);
+}
+
+.service-final-copy {
+    position: sticky;
+    top: calc(var(--header-height) + 1rem);
+    display: grid;
+    gap: 1rem;
+}
+
+.service-final-copy::before {
+    content: "";
+    width: min(58%, 460px);
+    height: 3px;
+    margin-bottom: 0.2rem;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light), transparent);
+    box-shadow: 0 0 32px rgba(249, 115, 22, 0.36);
+}
+
+.service-final-copy h2 {
+    max-width: 720px;
+    color: var(--color-heading);
+    text-wrap: balance;
+}
+
+.service-final-copy p {
+    max-width: 640px;
+    color: var(--color-text);
+}
+
+.service-final-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.72rem;
+}
+
+.service-final-note {
+    position: relative;
+    display: grid;
+    gap: 0.45rem;
+    max-width: 620px;
+    padding: 1rem;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.2), transparent 18rem),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.028));
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.service-final-note::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 18%;
+    left: -1px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+}
+
+.service-final-note small {
+    color: var(--color-accent-light);
+    font-size: 0.68rem;
+    line-height: 1;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.service-final-note strong {
+    color: var(--color-heading);
+    font-family: var(--font-heading);
+    font-size: clamp(1.06rem, 2vw, 1.4rem);
+    line-height: 1.18;
+    letter-spacing: -0.04em;
+}
+
+.service-final-note span {
+    color: var(--color-text);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.service-final-faq {
+    display: grid;
+    gap: 1rem;
+}
+
+.service-final-faq-head {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.service-final-faq-head h2 {
+    color: var(--color-heading);
+    font-size: clamp(1.45rem, 2.6vw, 2.35rem);
+}
+
+.service-final-faq-head p {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+/* ==========================================================
+   SERVICE RELATED
+   ========================================================== */
+
+.service-related {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3.4rem, 5.8vw, 6rem);
+}
+
+.service-related::before {
+    content: "";
+    position: absolute;
+    left: -14vw;
+    bottom: -12vw;
+    width: min(48vw, 680px);
+    aspect-ratio: 1.68;
+    transform: rotate(-8deg);
+    border: 1px solid rgba(249, 115, 22, 0.14);
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.13) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.08), transparent);
+    pointer-events: none;
+}
+
+.service-related-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.service-related-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.85rem;
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 1180px) {
+
+    .service-context-inner,
+    .service-evaluation-inner,
+    .service-final-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .service-evaluation-copy,
+    .service-final-copy {
+        position: relative;
+        top: auto;
+    }
+
+    .service-evaluation-item:nth-child(even),
+    .service-evaluation-item:nth-child(even):hover {
+        transform: none;
+    }
+
+    .service-evaluation-item:hover {
+        transform: translateY(-6px);
+    }
+
+    .service-process-head {
+        grid-template-columns: 1fr;
+    }
+
+    .service-process-grid,
+    .service-related-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+
+    .service-hero-actions,
+    .service-final-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .service-context,
+    .service-evaluation,
+    .service-process,
+    .service-related {
+        padding-block: 2.9rem;
+    }
+
+    .service-context-callout,
+    .service-evaluation-copy,
+    .service-final-note {
+        padding: 0.9rem;
+    }
+
+    .service-context-point {
+        grid-template-columns: 32px 1fr;
+        padding: 0.72rem;
+    }
+
+    .service-evaluation-item {
+        grid-template-columns: 50px 1fr;
+        gap: 0.75rem;
+        min-height: auto;
+        padding: 0.9rem;
+    }
+
+    .service-evaluation-item::before {
+        left: 50px;
+    }
+
+    .service-evaluation-number {
+        width: 42px;
+        height: 42px;
+    }
+
+    .service-process-grid,
+    .service-related-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-process-step {
+        min-height: auto;
+        padding: 0.9rem;
+    }
+
+    .service-final {
+        clip-path: polygon(0 2.3rem, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .service-final-inner {
+        padding-block: 4.8rem 3rem;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .service-context-point,
+    .service-evaluation-item {
+        grid-template-columns: 1fr;
+    }
+
+    .service-evaluation-item::before {
+        left: 0;
+    }
+
+    .service-context-point span:first-child,
+    .service-evaluation-number {
+        width: 40px;
+        height: 40px;
+    }
+
+    .service-process-icon {
+        width: 42px;
+        height: 42px;
+    }
+}

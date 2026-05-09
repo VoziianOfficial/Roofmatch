@@ -1,0 +1,717 @@
+/* ==========================================================
+   ROOFMATCH — SERVICES PAGE
+   Dark copper roofing category system
+   File: /css/services.css
+   ========================================================== */
+
+/* ==========================================================
+   SERVICES HERO
+   Uses global .services-hero photo hero system from style.css
+   ========================================================== */
+
+.services-hero {
+    background: var(--color-bg);
+}
+
+.services-hero .services-hero-inner {
+    max-width: 980px;
+}
+
+.services-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.72rem;
+    align-items: center;
+    margin-top: 0.35rem;
+}
+
+.services-hero-note {
+    display: inline-flex;
+    align-items: flex-start;
+    gap: 0.65rem;
+    max-width: 700px;
+    margin-top: 0.3rem;
+    padding-top: 0.95rem;
+    color: var(--color-muted);
+    font-size: 0.92rem;
+    line-height: 1.55;
+    border-top: 1px solid var(--color-border);
+}
+
+.services-hero-note svg {
+    flex: 0 0 auto;
+    width: 18px;
+    height: 18px;
+    margin-top: 0.16rem;
+    color: var(--color-accent-light);
+}
+
+/* ==========================================================
+   CATEGORY OVERVIEW
+   ========================================================== */
+
+.services-overview {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3.4rem, 5.8vw, 6rem);
+}
+
+.services-overview::before {
+    content: "";
+    position: absolute;
+    top: 4%;
+    right: -14vw;
+    width: min(48vw, 720px);
+    aspect-ratio: 1.7;
+    transform: rotate(-9deg);
+    border: 1px solid rgba(249, 115, 22, 0.15);
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.14) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.08), transparent);
+    pointer-events: none;
+}
+
+.services-overview::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 9%;
+    width: 42%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(249, 115, 22, 0.38), transparent);
+    pointer-events: none;
+}
+
+.services-overview-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.services-category-list {
+    display: grid;
+    gap: clamp(1rem, 2vw, 1.4rem);
+}
+
+.services-category-list .service-structured-card:nth-child(even) {
+    grid-template-columns: minmax(0, 1.08fr) minmax(220px, 0.92fr);
+}
+
+.services-category-list .service-structured-card:nth-child(even) .service-structured-image {
+    order: 2;
+}
+
+.services-category-list .service-structured-card:nth-child(even)::before {
+    right: 0;
+    left: auto;
+}
+
+/* ==========================================================
+   MATCHING PROCESS
+   ========================================================== */
+
+.services-process {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3.4rem, 5.8vw, 6rem);
+    background:
+        radial-gradient(circle at 12% 0%, rgba(249, 115, 22, 0.18), transparent 30rem),
+        linear-gradient(135deg, #0b0d0f, #171e24 52%, #080a0c);
+}
+
+.services-process::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.13) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.08), transparent 42%);
+}
+
+.services-process-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.services-process-grid {
+    display: grid;
+    grid-template-columns: minmax(280px, 0.52fr) minmax(0, 1fr);
+    gap: clamp(1.4rem, 4vw, 3rem);
+    align-items: start;
+}
+
+.services-process-copy {
+    position: sticky;
+    top: calc(var(--header-height) + 1rem);
+    display: grid;
+    gap: 1rem;
+}
+
+.services-process-copy h2 {
+    max-width: 640px;
+}
+
+.services-process-copy p {
+    max-width: 560px;
+    color: var(--color-muted);
+}
+
+.services-process-roofline {
+    width: min(78%, 320px);
+    margin-top: 1rem;
+    color: rgba(255, 237, 213, 0.52);
+    filter: drop-shadow(0 0 22px rgba(249, 115, 22, 0.2));
+}
+
+.services-process-roofline path {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: square;
+    stroke-linejoin: miter;
+}
+
+.services-process-roofline .accent {
+    stroke: var(--color-accent-light);
+}
+
+.services-process-steps {
+    display: grid;
+    gap: 0.75rem;
+    counter-reset: process;
+}
+
+.services-process-step {
+    position: relative;
+    display: grid;
+    grid-template-columns: 58px 1fr;
+    gap: 1rem;
+    min-height: 116px;
+    padding: 1rem;
+    overflow: hidden;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.022)),
+        rgba(18, 24, 29, 0.92);
+    border: 1px solid var(--color-border);
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.24);
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base),
+        background var(--transition-base);
+}
+
+.services-process-step::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    left: 58px;
+    width: 30%;
+    height: 3px;
+    transform: scaleX(0.38);
+    transform-origin: left;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+    transition: transform var(--transition-base);
+}
+
+.services-process-step::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: translateX(-100%);
+    background: linear-gradient(90deg, rgba(249, 115, 22, 0.12), transparent);
+    transition: transform var(--transition-base);
+}
+
+.services-process-icon {
+    display: grid;
+    place-items: center;
+    align-self: start;
+    width: 48px;
+    height: 48px;
+    color: var(--color-accent-light);
+    background: rgba(249, 115, 22, 0.12);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    transition:
+        color var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base),
+        transform var(--transition-base);
+}
+
+.services-process-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+.services-process-content {
+    display: grid;
+    gap: 0.35rem;
+    align-content: center;
+}
+
+.services-process-content h3 {
+    color: var(--color-heading);
+    font-size: clamp(1.04rem, 1.7vw, 1.34rem);
+    transition: color var(--transition-fast);
+}
+
+.services-process-content p {
+    color: var(--color-muted);
+    font-size: 0.95rem;
+}
+
+.services-process-step:nth-child(even) {
+    transform: translateX(1rem);
+}
+
+.services-process-step:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-card);
+}
+
+.services-process-step:nth-child(even):hover {
+    transform: translate(1rem, -6px);
+}
+
+.services-process-step:hover::before {
+    transform: scaleX(1);
+}
+
+.services-process-step:hover::after {
+    transform: translateX(0);
+}
+
+.services-process-step:hover .services-process-icon {
+    color: #111111;
+    transform: translateY(-2px);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.services-process-step:hover h3 {
+    color: var(--color-accent-pale);
+}
+
+/* ==========================================================
+   PROVIDER CHECKLIST
+   ========================================================== */
+
+.services-checklist {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3.4rem, 5.8vw, 6rem);
+}
+
+.services-checklist::before {
+    content: "";
+    position: absolute;
+    left: -14vw;
+    top: 12%;
+    width: min(46vw, 680px);
+    aspect-ratio: 1.68;
+    transform: rotate(-8deg);
+    border: 1px solid rgba(249, 115, 22, 0.14);
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.13) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.08), transparent);
+    pointer-events: none;
+}
+
+.services-checklist-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(320px, 0.62fr);
+    gap: clamp(1.4rem, 4vw, 3rem);
+    align-items: start;
+}
+
+.services-checklist-copy {
+    display: grid;
+    gap: 1rem;
+    max-width: 760px;
+}
+
+.services-checklist-copy p {
+    max-width: 660px;
+    color: var(--color-muted);
+}
+
+.services-checklist-panel {
+    position: relative;
+    display: grid;
+    gap: 0.7rem;
+    padding: clamp(1rem, 2vw, 1.3rem);
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.14), transparent 18rem),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.025)),
+        var(--color-surface);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+}
+
+.services-checklist-panel::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 22%;
+    left: -1px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+}
+
+.services-checklist-item {
+    display: grid;
+    grid-template-columns: 38px 1fr;
+    gap: 0.7rem;
+    align-items: start;
+    padding: 0.76rem;
+    background: rgba(255, 255, 255, 0.035);
+    border: 1px solid transparent;
+    transition:
+        transform var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base);
+}
+
+.services-checklist-item span:first-child {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    color: var(--color-accent-light);
+    background: rgba(249, 115, 22, 0.12);
+    border: 1px solid rgba(249, 115, 22, 0.2);
+    transition:
+        color var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base),
+        transform var(--transition-base);
+}
+
+.services-checklist-item svg {
+    width: 16px;
+    height: 16px;
+}
+
+.services-checklist-item strong {
+    display: block;
+    color: var(--color-text);
+    font-size: 0.94rem;
+    line-height: 1.45;
+}
+
+.services-checklist-item:hover {
+    transform: translateX(4px);
+    background: rgba(249, 115, 22, 0.085);
+    border-color: rgba(249, 115, 22, 0.22);
+}
+
+.services-checklist-item:hover span:first-child {
+    color: #111111;
+    transform: translateY(-2px);
+    background: var(--color-accent);
+    border-color: var(--color-accent);
+}
+
+.services-checklist-item:hover strong {
+    color: var(--color-heading);
+}
+
+/* ==========================================================
+   SERVICES CTA
+   ========================================================== */
+
+.services-cta {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: clamp(430px, 52vh, 620px);
+    color: var(--color-heading);
+    background: var(--color-dark);
+    clip-path: polygon(0 4vw, 100% 0, 100% 100%, 0 100%);
+}
+
+.services-cta-bg {
+    position: absolute;
+    inset: 0;
+    z-index: -5;
+}
+
+.services-cta-bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(1.18) contrast(1.12) brightness(0.58);
+}
+
+.services-cta::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -4;
+    background:
+        linear-gradient(90deg, rgba(5, 6, 7, 0.9), rgba(5, 6, 7, 0.54) 58%, rgba(5, 6, 7, 0.84)),
+        radial-gradient(circle at 22% 25%, rgba(249, 115, 22, 0.38), transparent 27rem),
+        linear-gradient(180deg, rgba(5, 6, 7, 0.18), rgba(5, 6, 7, 0.9));
+}
+
+.services-cta-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.82fr) minmax(300px, 0.46fr);
+    gap: clamp(1.2rem, 4vw, 3rem);
+    align-items: end;
+    min-height: clamp(430px, 52vh, 620px);
+    padding-block: clamp(5rem, 8vw, 7rem) clamp(3.5rem, 6vw, 5rem);
+}
+
+.services-cta-copy {
+    display: grid;
+    gap: 1rem;
+    max-width: 820px;
+}
+
+.services-cta-copy::before {
+    content: "";
+    width: min(58%, 460px);
+    height: 3px;
+    margin-bottom: 0.2rem;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light), transparent);
+    box-shadow: 0 0 32px rgba(249, 115, 22, 0.36);
+}
+
+.services-cta-copy h2 {
+    max-width: 780px;
+    color: var(--color-heading);
+    text-wrap: balance;
+}
+
+.services-cta-copy p {
+    max-width: 680px;
+    color: var(--color-text);
+}
+
+.services-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.72rem;
+}
+
+.services-cta-note {
+    position: relative;
+    display: grid;
+    gap: 0.45rem;
+    padding: 1rem;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.2), transparent 18rem),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.028));
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.services-cta-note::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 18%;
+    left: -1px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+}
+
+.services-cta-note small {
+    color: var(--color-accent-light);
+    font-size: 0.68rem;
+    line-height: 1;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.services-cta-note strong {
+    color: var(--color-heading);
+    font-family: var(--font-heading);
+    font-size: clamp(1.06rem, 2vw, 1.4rem);
+    line-height: 1.18;
+    letter-spacing: -0.04em;
+}
+
+.services-cta-note span {
+    color: var(--color-text);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+/* ==========================================================
+   SERVICES FAQ
+   ========================================================== */
+
+.services-faq {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(3.4rem, 5.8vw, 6rem);
+}
+
+.services-faq::before {
+    content: "";
+    position: absolute;
+    right: -13vw;
+    bottom: -13vw;
+    width: min(46vw, 620px);
+    aspect-ratio: 1.7;
+    transform: rotate(-8deg);
+    border: 1px solid rgba(249, 115, 22, 0.14);
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.14) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.08), transparent);
+    pointer-events: none;
+}
+
+.services-faq-grid {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(280px, 0.5fr) minmax(0, 0.9fr);
+    gap: clamp(1.4rem, 4vw, 3rem);
+    align-items: start;
+}
+
+.services-faq-copy {
+    position: sticky;
+    top: calc(var(--header-height) + 1rem);
+    display: grid;
+    gap: 1rem;
+}
+
+.services-faq-copy p {
+    max-width: 520px;
+    color: var(--color-muted);
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 1180px) {
+
+    .services-category-list .service-structured-card,
+    .services-category-list .service-structured-card:nth-child(even) {
+        grid-template-columns: 1fr;
+    }
+
+    .services-category-list .service-structured-card:nth-child(even) .service-structured-image {
+        order: 0;
+    }
+
+    .services-process-grid,
+    .services-checklist-inner,
+    .services-cta-inner,
+    .services-faq-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .services-process-copy,
+    .services-faq-copy {
+        position: relative;
+        top: auto;
+    }
+
+    .services-process-step:nth-child(even),
+    .services-process-step:nth-child(even):hover {
+        transform: none;
+    }
+
+    .services-process-step:hover {
+        transform: translateY(-6px);
+    }
+
+    .services-cta-note {
+        max-width: 620px;
+    }
+}
+
+@media (max-width: 760px) {
+
+    .services-hero-actions,
+    .services-cta-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .services-overview,
+    .services-process,
+    .services-checklist,
+    .services-faq {
+        padding-block: 2.9rem;
+    }
+
+    .services-process-step {
+        grid-template-columns: 54px 1fr;
+        gap: 0.75rem;
+        min-height: auto;
+        padding: 0.9rem;
+    }
+
+    .services-process-step::before {
+        left: 54px;
+    }
+
+    .services-process-icon {
+        width: 44px;
+        height: 44px;
+    }
+
+    .services-checklist-panel {
+        padding: 0.9rem;
+    }
+
+    .services-checklist-item {
+        padding: 0.72rem;
+    }
+
+    .services-cta {
+        min-height: 520px;
+        clip-path: polygon(0 2.3rem, 100% 0, 100% 100%, 0 100%);
+    }
+
+    .services-cta-inner {
+        min-height: 520px;
+        padding-block: 4.8rem 3rem;
+    }
+}
+
+@media (max-width: 420px) {
+    .services-process-step {
+        grid-template-columns: 1fr;
+    }
+
+    .services-process-step::before {
+        left: 0;
+    }
+
+    .services-process-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .services-checklist-item {
+        grid-template-columns: 34px 1fr;
+        gap: 0.6rem;
+    }
+
+    .services-checklist-item span:first-child {
+        width: 32px;
+        height: 32px;
+    }
+}

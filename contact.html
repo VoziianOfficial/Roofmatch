@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact RoofMatch | Start a Roofing Matching Request</title>
+    <meta name="description"
+        content="Contact RoofMatch to prepare a roofing provider matching request for local roofing categories.">
+
+    <link rel="icon" type="image/svg+xml" href="./assets/icons/favicon.svg">
+    <link rel="icon" href="./assets/icons/favicon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div data-site-header></div>
+
+    <main id="main">
+        <section class="contact-hero" aria-labelledby="contactHeroTitle">
+            <div class="hero-bg" aria-hidden="true">
+                <img src="./assets/images/roof-contact.jpg" alt="" loading="eager">
+            </div>
+
+            <div class="container contact-hero-inner">
+                <p class="eyebrow">Start request</p>
+
+                <h1 id="contactHeroTitle">
+                    Prepare your roofing provider matching request.
+                </h1>
+
+                <p class="lead">
+                    Share your roofing category, ZIP code, timing, and project notes. RoofMatch does not perform roofing
+                    work
+                    directly.
+                </p>
+
+                <div class="contact-hero-actions" aria-label="Contact page actions">
+                    <a class="btn btn-primary" href="#requestForm">
+                        Open request form
+                        <i data-lucide="arrow-right" aria-hidden="true"></i>
+                    </a>
+
+                    <a class="btn btn-secondary" href="services.html">
+                        View categories
+                        <i data-lucide="layers" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+                <p class="contact-hero-note">
+                    <i data-lucide="shield-check" aria-hidden="true"></i>
+                    <span>
+                        RoofMatch is an independent provider matching platform and does not repair, replace, inspect, or
+                        perform
+                        roofing work directly.
+                    </span>
+                </p>
+            </div>
+
+            <svg class="hero-roofline-mark" viewBox="0 0 360 170" aria-hidden="true" focusable="false">
+                <path d="M18 128 L180 34 L342 128"></path>
+                <path class="accent" d="M64 132 L180 68 L296 132"></path>
+                <path d="M104 146 H342"></path>
+                <path class="accent" d="M18 156 H246"></path>
+            </svg>
+        </section>
+
+        <section class="contact-request" aria-labelledby="requestFormTitle">
+            <div class="container contact-request-inner">
+                <div class="contact-form-wrap">
+                    <div class="contact-form-head reveal-up">
+                        <p class="eyebrow">Request details</p>
+
+                        <h2 id="requestFormTitle">
+                            Start a roofing provider matching request.
+                        </h2>
+
+                        <p>
+                            Share your ZIP code, roofing category, timing, and project notes so your request is easier
+                            to review
+                            before comparing independent provider options.
+                        </p>
+                    </div>
+
+                    <form class="form-card contact-form-card reveal-up" id="requestForm" data-contact-form novalidate>
+                        <div class="form-grid">
+                            <div class="form-field">
+                                <label for="contactName">Name</label>
+                                <input id="contactName" name="name" type="text" autocomplete="name"
+                                    placeholder="Your name" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="contactPhone">Phone</label>
+                                <input id="contactPhone" name="phone" type="tel" autocomplete="tel"
+                                    placeholder="Phone number" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="contactEmail">Email</label>
+                                <input id="contactEmail" name="email" type="email" autocomplete="email"
+                                    placeholder="Email address" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="contactZip">ZIP code</label>
+                                <input id="contactZip" name="zip" type="text" inputmode="numeric"
+                                    autocomplete="postal-code" placeholder="ZIP code" required>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="roofingCategory">Roofing category</label>
+                                <select id="roofingCategory" name="category" required>
+                                    <option value="">Select category</option>
+                                    <option value="Roof Repair">Roof Repair</option>
+                                    <option value="Roof Replacement">Roof Replacement</option>
+                                    <option value="Roof Inspection">Roof Inspection</option>
+                                    <option value="Storm Damage Roofing">Storm Damage Roofing</option>
+                                    <option value="Not sure yet">Not sure yet</option>
+                                </select>
+                            </div>
+
+                            <div class="form-field">
+                                <label for="requestTiming">Timing</label>
+                                <select id="requestTiming" name="timing" required>
+                                    <option value="">Select timing</option>
+                                    <option value="As soon as possible">As soon as possible</option>
+                                    <option value="This month">This month</option>
+                                    <option value="Planning ahead">Planning ahead</option>
+                                    <option value="Not sure">Not sure</option>
+                                </select>
+                            </div>
+
+                            <div class="form-field full">
+                                <label for="projectNotes">Project notes</label>
+                                <textarea id="projectNotes" name="notes"
+                                    placeholder="Share visible concerns, roof age if known, timing notes, photos available, or anything helpful for the request."
+                                    required></textarea>
+                            </div>
+                        </div>
+
+                        <label class="form-consent">
+                            <input id="policyConsent" name="consent" type="checkbox" required>
+                            <span class="form-consent-mark" aria-hidden="true"></span>
+                            <span>
+                                I understand RoofMatch is an independent provider matching platform and does not perform
+                                roofing work
+                                directly.
+                            </span>
+                        </label>
+
+                        <div class="form-message" data-form-message role="status" aria-live="polite"></div>
+
+                        <div class="contact-form-actions">
+                            <button class="btn btn-primary" type="submit">
+                                Prepare request
+                                <i data-lucide="arrow-right" aria-hidden="true"></i>
+                            </button>
+
+                            <a class="btn btn-secondary" href="tel:+18007429186" data-phone-link>
+                                Call instead
+                                <i data-lucide="phone" aria-hidden="true"></i>
+                            </a>
+                        </div>
+
+                        <p class="contact-form-footnote">
+                            <i data-lucide="shield-check" aria-hidden="true"></i>
+                            <span>
+                                Submitting this form does not create a roofing contract. Homeowners should verify
+                                provider credentials,
+                                insurance, scope, quotes, warranties, and local requirements before hiring.
+                            </span>
+                        </p>
+                    </form>
+                </div>
+
+                <aside class="contact-side" aria-label="RoofMatch contact information">
+                    <div class="contact-info-card reveal-up">
+                        <h2>Contact information</h2>
+
+                        <div class="contact-info-list">
+                            <div class="contact-info-item">
+                                <span class="contact-info-icon">
+                                    <i data-lucide="phone" aria-hidden="true"></i>
+                                </span>
+
+                                <span class="contact-info-copy">
+                                    <small>Phone</small>
+                                    <a href="tel:+18007429186" data-phone-link data-phone-text>
+                                        (800) 742-9186
+                                    </a>
+                                </span>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <span class="contact-info-icon">
+                                    <i data-lucide="mail" aria-hidden="true"></i>
+                                </span>
+
+                                <span class="contact-info-copy">
+                                    <small>Email</small>
+                                    <a href="mailto:hello@roofmatchplatform.com" data-email-link data-email-text>
+                                        hello@roofmatchplatform.com
+                                    </a>
+                                </span>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <span class="contact-info-icon">
+                                    <i data-lucide="map-pin" aria-hidden="true"></i>
+                                </span>
+
+                                <span class="contact-info-copy">
+                                    <small>Address</small>
+                                    <span data-address-text>
+                                        1209 Orange Street, Wilmington, DE 19801, USA
+                                    </span>
+                                </span>
+                            </div>
+
+                            <div class="contact-info-item">
+                                <span class="contact-info-icon">
+                                    <i data-lucide="home" aria-hidden="true"></i>
+                                </span>
+
+                                <span class="contact-info-copy">
+                                    <small>Service area</small>
+                                    <span data-service-area>
+                                        USA roofing provider matching platform
+                                    </span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <p class="contact-legal-note" data-legal-notice>
+                            RoofMatch is an independent provider matching platform and does not perform roofing work
+                            directly.
+                        </p>
+                    </div>
+
+                    <div class="contact-map-card reveal-up" aria-label="Designed map-style coverage card">
+                        <span class="contact-map-marker" aria-hidden="true">
+                            <i data-lucide="map-pin" aria-hidden="true"></i>
+                        </span>
+
+                        <div class="contact-map-content">
+                            <small>USA provider matching coverage</small>
+                            <strong>Wilmington, DE</strong>
+                            <span>
+                                RoofMatch uses request details such as ZIP code and category to help homeowners compare
+                                independent
+                                local provider options.
+                            </span>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <section class="contact-bottom" aria-labelledby="contactBottomTitle">
+            <div class="contact-bottom-bg" aria-hidden="true">
+                <img src="./assets/images/roof-cta.jpg" alt="" loading="lazy">
+            </div>
+
+            <div class="container contact-bottom-inner">
+                <div class="contact-bottom-copy reveal-up">
+                    <p class="eyebrow">Before choosing a provider</p>
+
+                    <h2 id="contactBottomTitle">
+                        Verify the details before entering any roofing agreement.
+                    </h2>
+
+                    <p>
+                        RoofMatch helps prepare request information, but independent providers are responsible for their
+                        own
+                        estimates, agreements, services, and work.
+                    </p>
+
+                    <div class="contact-bottom-actions">
+                        <a class="btn btn-primary" href="services.html">
+                            Review categories
+                            <i data-lucide="layers" aria-hidden="true"></i>
+                        </a>
+
+                        <a class="btn btn-secondary" href="about.html">
+                            Platform model
+                            <i data-lucide="shield-check" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <aside class="contact-bottom-note reveal-up" aria-label="RoofMatch disclaimer note">
+                    <small>Verification reminder</small>
+
+                    <strong>
+                        RoofMatch does not warrant or guarantee provider work.
+                    </strong>
+
+                    <span>
+                        Homeowners should verify licensing, insurance, quote details, written scope, warranty terms, and
+                        local
+                        requirements before hiring.
+                    </span>
+                </aside>
+            </div>
+        </section>
+
+        <section class="contact-faq" aria-labelledby="contactFaqTitle">
+            <div class="container contact-faq-grid">
+                <div class="contact-faq-copy reveal-up">
+                    <p class="eyebrow">Contact questions</p>
+
+                    <h2 id="contactFaqTitle">
+                        Request matching without contractor confusion.
+                    </h2>
+
+                    <p>
+                        Submitting a request helps organize details. It does not mean RoofMatch performs roofing work
+                        directly or
+                        creates a roofing contract.
+                    </p>
+                </div>
+
+                <div class="faq-list reveal-up" data-faq-list="contact"></div>
+            </div>
+        </section>
+    </main>
+
+    <div data-site-footer></div>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js" defer></script>
+    <script src="./js/config.js" defer></script>
+    <script src="./js/main.js" defer></script>
+    <script src="./js/contact.js" defer></script>
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>RoofMatch favicon</title>
+
+  <rect width="64" height="64" fill="#080A0C"/>
+
+  <path
+    d="M9 39L32 19L55 39"
+    stroke="#FFF7ED"
+    stroke-width="5"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+  />
+
+  <path
+    d="M18 41L32 29L46 41"
+    stroke="#F97316"
+    stroke-width="4.5"
+    stroke-linecap="square"
+    stroke-linejoin="miter"
+  />
+
+  <path
+    d="M25 47H55"
+    stroke="#FB923C"
+    stroke-width="4"
+    stroke-linecap="square"
+  />
+
+  <path
+    d="M9 52H40"
+    stroke="#C2410C"
+    stroke-width="4"
+    stroke-linecap="square"
+  />
+
+  <path
+    d="M32 19L55 39"
+    stroke="#FED7AA"
+    stroke-width="1.4"
+    stroke-linecap="square"
+    opacity="0.8"
+  />
+</svg>
