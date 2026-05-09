@@ -1206,3 +1206,34 @@
         font-size: 0.66rem;
     }
 }
+
+/* ==========================================================
+   SERVICES FAQ — DESKTOP COPY BALANCE
+   ========================================================== */
+
+@media (min-width: 1181px) {
+    .services-faq-copy {
+        max-width: 430px;
+    }
+
+    .services-faq-copy h2 {
+        max-width: 420px;
+        font-size: clamp(1.85rem, 2.7vw, 2.65rem);
+        line-height: 1.08;
+        letter-spacing: -0.045em;
+        text-wrap: balance;
+    }
+
+    .services-faq-copy p {
+        max-width: 390px;
+        font-size: 0.96rem;
+        line-height: 1.55;
+    }
+}
+
+/* Hide services FAQ intro paragraph on tablet and mobile */
+@media (max-width: 1180px) {
+    .services-faq-copy p {
+        display: none;
+    }
+}
