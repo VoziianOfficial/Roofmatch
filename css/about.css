@@ -1221,3 +1221,99 @@
         transform: translateX(4px);
     }
 }
+/* ==========================================================
+   ABOUT STORY POINTS — COMPACT TABLET / MOBILE
+   Icons in top-right corner
+   ========================================================== */
+
+@media (max-width: 1180px) {
+    .about-story-points {
+        gap: 0.6rem !important;
+    }
+
+    .about-story-point {
+        position: relative !important;
+        min-height: 0 !important;
+        height: auto !important;
+        padding: 0.78rem 3rem 0.78rem 0.82rem !important;
+        gap: 0.22rem !important;
+        align-content: start !important;
+    }
+
+    .about-story-point span {
+        position: absolute !important;
+        top: 0.65rem !important;
+        right: 0.65rem !important;
+        width: 32px !important;
+        height: 32px !important;
+        margin: 0 !important;
+    }
+
+    .about-story-point span svg,
+    .about-story-point svg {
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+    .about-story-point strong {
+        max-width: 100% !important;
+        padding-right: 0 !important;
+        font-size: 0.88rem !important;
+        line-height: 1.18 !important;
+    }
+
+    .about-story-point small {
+        max-width: 100% !important;
+        font-size: 0.78rem !important;
+        line-height: 1.32 !important;
+    }
+}
+
+/* mobile */
+@media (max-width: 760px) {
+    .about-story-points {
+        grid-template-columns: 1fr !important;
+        gap: 0.52rem !important;
+    }
+
+    .about-story-point {
+        padding: 0.72rem 2.85rem 0.72rem 0.75rem !important;
+    }
+
+    .about-story-point span {
+        top: 0.58rem !important;
+        right: 0.58rem !important;
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+    .about-story-point strong {
+        font-size: 0.86rem !important;
+        line-height: 1.16 !important;
+    }
+
+    .about-story-point small {
+        font-size: 0.76rem !important;
+        line-height: 1.3 !important;
+    }
+}
+
+/* small mobile */
+@media (max-width: 420px) {
+    .about-story-point {
+        padding: 0.68rem 2.7rem 0.68rem 0.7rem !important;
+    }
+
+    .about-story-point span {
+        top: 0.55rem !important;
+        right: 0.55rem !important;
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    .about-story-point span svg,
+    .about-story-point svg {
+        width: 14px !important;
+        height: 14px !important;
+    }
+}
