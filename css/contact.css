@@ -721,3 +721,1212 @@
         left: 0.75rem;
     }
 }
+
+/* ==========================================================
+   CONTACT MINI REQUEST — COMPACT / DIFFERENT / NO HUGE CARDS
+   ========================================================== */
+
+.contact-mini-request {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(2.6rem, 4.8vw, 4.4rem);
+    background:
+        radial-gradient(circle at 12% 0%, rgba(249, 115, 22, 0.18), transparent 28rem),
+        linear-gradient(135deg, #080a0c 0%, #131a20 54%, #090b0d 100%);
+}
+
+.contact-mini-request::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(130deg, transparent 0 48%, rgba(249, 115, 22, 0.11) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.07), transparent 46%);
+}
+
+.contact-mini-request-inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(300px, 0.52fr);
+    gap: clamp(0.9rem, 2.4vw, 1.45rem);
+    align-items: stretch;
+}
+
+/* left compact form */
+.contact-mini-form-card {
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: minmax(220px, 0.38fr) minmax(0, 0.62fr);
+    gap: 0;
+    min-height: 420px;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.14), transparent 18rem),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.018)),
+        rgba(18, 24, 29, 0.95);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+}
+
+.contact-mini-form-card::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 20%;
+    left: -1px;
+    z-index: 5;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.3);
+}
+
+/* side roof cut */
+.contact-mini-form-card::after {
+    content: "";
+    position: absolute;
+    left: -8rem;
+    bottom: -7rem;
+    width: 360px;
+    aspect-ratio: 1.7;
+    transform: rotate(-10deg);
+    border: 1px solid rgba(249, 115, 22, 0.18);
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.16) 49%, transparent 50%);
+    pointer-events: none;
+}
+
+.contact-mini-form-head {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    align-content: center;
+    gap: 0.8rem;
+    padding: clamp(1rem, 2.2vw, 1.35rem);
+    border-right: 1px solid var(--color-border);
+    background:
+        linear-gradient(135deg, rgba(249, 115, 22, 0.1), transparent 56%),
+        rgba(8, 10, 12, 0.26);
+}
+
+.contact-mini-form-head::before {
+    content: "";
+    width: min(100%, 220px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light), transparent);
+    box-shadow: 0 0 24px rgba(249, 115, 22, 0.35);
+}
+
+.contact-mini-form-head h2 {
+    max-width: 340px;
+    font-size: clamp(1.45rem, 2.4vw, 2.08rem);
+    line-height: 1.08;
+}
+
+.contact-mini-form-head p {
+    max-width: 320px;
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    line-height: 1.48;
+}
+
+.contact-mini-form {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 0.58rem;
+    align-content: center;
+    padding: clamp(0.9rem, 1.7vw, 1rem);
+}
+
+.contact-mini-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+}
+
+.contact-mini-grid .form-field {
+    gap: 0.18rem;
+}
+
+.contact-mini-grid .form-field.full {
+    grid-column: 1 / -1;
+}
+
+.contact-mini-grid label {
+    font-size: 0.62rem;
+}
+
+.contact-mini-grid input,
+.contact-mini-grid select {
+    min-height: 36px;
+    padding: 0.54rem 0.62rem;
+    font-size: 0.84rem;
+}
+
+.contact-mini-grid textarea {
+    min-height: 66px;
+    max-height: 112px;
+    padding: 0.58rem 0.62rem;
+    font-size: 0.84rem;
+}
+
+.contact-mini-consent {
+    padding-block: 0.35rem;
+    font-size: 0.74rem;
+    line-height: 1.34;
+}
+
+.contact-mini-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.contact-mini-actions .btn {
+    min-height: 40px;
+    padding: 0.68rem 0.86rem;
+    font-size: 0.68rem;
+}
+
+/* right photo blueprint */
+.contact-mini-guide {
+    position: relative;
+    overflow: hidden;
+    min-height: 420px;
+    display: grid;
+    align-content: end;
+    background: var(--color-dark);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    clip-path: polygon(7% 0, 100% 0, 100% 88%, 91% 100%, 0 100%, 0 11%);
+}
+
+.contact-mini-guide::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+        linear-gradient(180deg, rgba(8, 10, 12, 0.14), rgba(8, 10, 12, 0.92)),
+        radial-gradient(circle at 18% 18%, rgba(249, 115, 22, 0.34), transparent 17rem),
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.18) 49%, transparent 50%);
+}
+
+.contact-mini-guide::after {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 20%;
+    left: -1px;
+    z-index: 5;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+}
+
+.contact-mini-guide-photo {
+    position: absolute;
+    inset: 0;
+}
+
+.contact-mini-guide-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(1.2) contrast(1.14) brightness(0.56);
+    transform: scale(1.03);
+    transition:
+        transform var(--transition-slow),
+        filter var(--transition-slow);
+}
+
+.contact-mini-guide:hover .contact-mini-guide-photo img {
+    transform: scale(1.07) translateX(5px);
+    filter: saturate(1.34) contrast(1.18) brightness(0.68);
+}
+
+.contact-mini-guide-copy {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    gap: 0.65rem;
+    padding: 1rem 1rem 0.7rem;
+}
+
+.contact-mini-guide-copy h3 {
+    max-width: 360px;
+    font-size: clamp(1.16rem, 2vw, 1.5rem);
+    line-height: 1.12;
+}
+
+.contact-mini-guide-list {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+    padding: 0 1rem 1rem;
+}
+
+.contact-mini-guide-list div {
+    display: grid;
+    grid-template-columns: 30px 1fr;
+    gap: 0.48rem;
+    align-items: center;
+    min-height: 40px;
+    padding: 0.48rem;
+    background: rgba(8, 10, 12, 0.64);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    transition:
+        transform var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base);
+}
+
+.contact-mini-guide-list i,
+.contact-mini-guide-list svg {
+    width: 15px;
+    height: 15px;
+    color: var(--color-accent-light);
+}
+
+.contact-mini-guide-list span {
+    color: var(--color-heading);
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.15;
+}
+
+.contact-mini-guide-list div:hover {
+    transform: translateY(-3px);
+    background: rgba(249, 115, 22, 0.14);
+    border-color: rgba(249, 115, 22, 0.36);
+}
+
+/* ==========================================================
+   CONTACT MINI LOCATION — MATCHED COMPACT CARDS
+   ========================================================== */
+
+.contact-mini-location {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(2.6rem, 4.8vw, 4.2rem);
+}
+
+.contact-mini-location::before {
+    content: "";
+    position: absolute;
+    left: -14vw;
+    bottom: -14vw;
+    width: min(46vw, 680px);
+    aspect-ratio: 1.7;
+    transform: rotate(-8deg);
+    border: 1px solid rgba(249, 115, 22, 0.14);
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.14) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(251, 146, 60, 0.08), transparent);
+    pointer-events: none;
+}
+
+.contact-mini-location-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1040px;
+}
+
+.contact-mini-location-head {
+    display: grid;
+    gap: 0.58rem;
+    max-width: 680px;
+    margin-bottom: 1rem;
+}
+
+.contact-mini-location-head h2 {
+    font-size: clamp(1.46rem, 2.8vw, 2.3rem);
+}
+
+.contact-mini-location-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.8rem, 2vw, 1rem);
+}
+
+.contact-mini-map,
+.contact-mini-info {
+    position: relative;
+    overflow: hidden;
+    min-height: 315px;
+    height: clamp(315px, 28vw, 360px);
+    background:
+        radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.15), transparent 17rem),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.068), rgba(255, 255, 255, 0.02)),
+        rgba(18, 24, 29, 0.94);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    transition:
+        transform var(--transition-base),
+        border-color var(--transition-base),
+        box-shadow var(--transition-base);
+}
+
+.contact-mini-map::before,
+.contact-mini-info::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 24%;
+    left: -1px;
+    z-index: 5;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+    box-shadow: 0 0 28px rgba(249, 115, 22, 0.26);
+}
+
+.contact-mini-map:hover,
+.contact-mini-info:hover {
+    transform: translateY(-6px);
+    border-color: var(--color-border-strong);
+    box-shadow: var(--shadow-strong);
+}
+
+/* compact map */
+.contact-mini-map {
+    display: grid;
+    align-content: end;
+    padding: 0.95rem;
+    clip-path: polygon(6% 0, 100% 0, 100% 91%, 94% 100%, 0 100%, 0 9%);
+}
+
+.contact-mini-map-lines {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, transparent 0 20%, rgba(255, 255, 255, 0.08) 21%, transparent 22%),
+        linear-gradient(90deg, transparent 0 56%, rgba(249, 115, 22, 0.13) 57%, transparent 58%),
+        linear-gradient(180deg, transparent 0 31%, rgba(255, 255, 255, 0.075) 32%, transparent 33%),
+        linear-gradient(180deg, transparent 0 68%, rgba(249, 115, 22, 0.13) 69%, transparent 70%),
+        radial-gradient(circle at 62% 38%, rgba(249, 115, 22, 0.3), transparent 11rem);
+}
+
+.contact-mini-map-lines span {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(251, 146, 60, 0.68), transparent);
+    transform: rotate(-12deg);
+}
+
+.contact-mini-map-lines span:nth-child(1) {
+    left: 8%;
+    top: 26%;
+    width: 72%;
+}
+
+.contact-mini-map-lines span:nth-child(2) {
+    right: 6%;
+    top: 48%;
+    width: 62%;
+}
+
+.contact-mini-map-lines span:nth-child(3) {
+    left: 11%;
+    bottom: 30%;
+    width: 52%;
+}
+
+.contact-mini-map-lines span:nth-child(4) {
+    right: 18%;
+    bottom: 17%;
+    width: 40%;
+}
+
+.contact-mini-map-pin {
+    position: absolute;
+    left: 58%;
+    top: 34%;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    color: #111111;
+    background: var(--color-accent);
+    border: 1px solid var(--color-accent-light);
+    box-shadow:
+        0 18px 42px rgba(249, 115, 22, 0.36),
+        0 0 0 10px rgba(249, 115, 22, 0.12);
+    transition: transform var(--transition-base);
+}
+
+.contact-mini-map-pin svg {
+    width: 21px;
+    height: 21px;
+}
+
+.contact-mini-map:hover .contact-mini-map-pin {
+    transform: translateY(-6px) rotate(-4deg);
+}
+
+.contact-mini-map-copy {
+    position: relative;
+    z-index: 3;
+    display: grid;
+    gap: 0.3rem;
+    max-width: 380px;
+    padding: 0.8rem;
+    background: rgba(8, 10, 12, 0.74);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.contact-mini-map-copy small,
+.contact-mini-info-head small {
+    color: var(--color-accent-light);
+    font-size: 0.64rem;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.contact-mini-map-copy strong {
+    color: var(--color-heading);
+    font-family: var(--font-heading);
+    font-size: clamp(1.12rem, 2vw, 1.42rem);
+    line-height: 1.1;
+}
+
+.contact-mini-map-copy span {
+    color: var(--color-text);
+    font-size: 0.84rem;
+    line-height: 1.4;
+}
+
+/* compact info with photo */
+.contact-mini-info {
+    display: grid;
+    grid-template-columns: minmax(160px, 0.78fr) minmax(0, 1fr);
+    clip-path: polygon(0 0, 94% 0, 100% 9%, 100% 100%, 0 100%);
+}
+
+.contact-mini-info-photo {
+    position: relative;
+    overflow: hidden;
+    background: var(--color-dark);
+    clip-path: polygon(0 0, 100% 0, 82% 100%, 0 100%);
+}
+
+.contact-mini-info-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(1.2) contrast(1.14) brightness(0.66);
+    transform: scale(1.03);
+    transition:
+        transform var(--transition-slow),
+        filter var(--transition-slow);
+}
+
+.contact-mini-info-photo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(8, 10, 12, 0.08), rgba(8, 10, 12, 0.76)),
+        radial-gradient(circle at 18% 20%, rgba(249, 115, 22, 0.32), transparent 14rem);
+}
+
+.contact-mini-info:hover .contact-mini-info-photo img {
+    transform: scale(1.07) translateX(5px);
+    filter: saturate(1.34) contrast(1.18) brightness(0.8);
+}
+
+.contact-mini-info-content {
+    display: grid;
+    align-content: center;
+    gap: 0.68rem;
+    padding: 0.9rem;
+}
+
+.contact-mini-info-head {
+    display: grid;
+    gap: 0.12rem;
+}
+
+.contact-mini-info-head h3 {
+    font-size: clamp(1.06rem, 1.7vw, 1.32rem);
+}
+
+.contact-mini-info-list {
+    display: grid;
+    gap: 0.42rem;
+}
+
+.contact-mini-info-list a,
+.contact-mini-info-list div {
+    display: grid;
+    grid-template-columns: 25px 1fr;
+    gap: 0.45rem;
+    align-items: center;
+    min-height: 36px;
+    padding: 0.46rem;
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.038);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.8rem;
+    line-height: 1.28;
+    transition:
+        transform var(--transition-base),
+        color var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base);
+}
+
+.contact-mini-info-list svg {
+    width: 15px;
+    height: 15px;
+    color: var(--color-accent-light);
+}
+
+.contact-mini-info-list a:hover,
+.contact-mini-info-list div:hover {
+    color: var(--color-accent-pale);
+    transform: translateX(5px);
+    background: rgba(249, 115, 22, 0.1);
+    border-color: rgba(249, 115, 22, 0.28);
+}
+
+/* ==========================================================
+   RESPONSIVE
+   ========================================================== */
+
+@media (max-width: 1180px) {
+    .contact-mini-request-inner {
+        grid-template-columns: 1fr;
+        max-width: 860px;
+    }
+
+    .contact-mini-guide {
+        min-height: 360px;
+    }
+
+    .contact-mini-location-head {
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .contact-mini-location-head .eyebrow,
+    .contact-mini-location-head h2 {
+        margin-inline: auto;
+    }
+
+    .contact-mini-location-grid {
+        max-width: 860px;
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 900px) {
+    .contact-mini-form-card {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-mini-form-head {
+        border-right: 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .contact-mini-location-grid {
+        grid-template-columns: 1fr;
+        max-width: 620px;
+    }
+
+    .contact-mini-map,
+    .contact-mini-info {
+        height: auto;
+        min-height: 310px;
+    }
+
+    .contact-mini-info {
+        grid-template-columns: 1fr;
+        grid-template-rows: 140px auto;
+    }
+
+    .contact-mini-info-photo {
+        clip-path: polygon(0 0, 100% 0, 100% 78%, 0 100%);
+    }
+}
+
+@media (max-width: 760px) {
+
+    .contact-mini-request,
+    .contact-mini-location {
+        padding-block: 2.6rem;
+    }
+
+    .contact-mini-form-head {
+        text-align: center;
+    }
+
+    .contact-mini-form-head .eyebrow,
+    .contact-mini-form-head h2,
+    .contact-mini-form-head p,
+    .contact-mini-form-head::before {
+        margin-inline: auto;
+    }
+
+    .contact-mini-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-mini-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .contact-mini-guide {
+        min-height: 420px;
+    }
+
+    .contact-mini-guide-copy {
+        text-align: center;
+    }
+
+    .contact-mini-guide-copy .eyebrow,
+    .contact-mini-guide-copy h3 {
+        margin-inline: auto;
+    }
+
+    .contact-mini-guide-list {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-mini-map-pin {
+        left: 56%;
+        top: 31%;
+        width: 42px;
+        height: 42px;
+    }
+}
+
+@media (max-width: 420px) {
+
+    .contact-mini-guide,
+    .contact-mini-map,
+    .contact-mini-info {
+        clip-path: none;
+    }
+
+    .contact-mini-form,
+    .contact-mini-info-content,
+    .contact-mini-map {
+        padding-inline: 0.78rem;
+    }
+
+    .contact-mini-info-head {
+        text-align: left;
+    }
+}
+
+/* ==========================================================
+   CONTACT LOCATION BOARD — COMPACT ROOFLINE CONTACT SECTION
+   ========================================================== */
+
+.contact-location-board {
+    position: relative;
+    overflow: hidden;
+    padding-block: clamp(2.6rem, 4.8vw, 4.4rem);
+    background:
+        radial-gradient(circle at 16% 0%, rgba(249, 115, 22, 0.16), transparent 28rem),
+        linear-gradient(135deg, #080a0c 0%, #12191f 52%, #090b0d 100%);
+}
+
+.contact-location-board::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        linear-gradient(132deg, transparent 0 48%, rgba(249, 115, 22, 0.11) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.07), transparent 48%);
+}
+
+.contact-location-board-inner {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-location-board-head {
+    display: grid;
+    gap: 0.62rem;
+    max-width: 720px;
+    margin-bottom: clamp(1rem, 2.2vw, 1.45rem);
+}
+
+.contact-location-board-head h2 {
+    font-size: clamp(1.45rem, 2.8vw, 2.35rem);
+    line-height: 1.08;
+}
+
+.contact-location-board-shell {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(260px, 0.9fr) minmax(260px, 0.82fr) minmax(240px, 0.68fr);
+    min-height: 350px;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 0% 0%, rgba(249, 115, 22, 0.14), transparent 18rem),
+        linear-gradient(135deg, rgba(255, 255, 255, 0.07), rgba(255, 255, 255, 0.018)),
+        rgba(18, 24, 29, 0.94);
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-card);
+    clip-path: polygon(3% 0, 100% 0, 100% 88%, 96% 100%, 0 100%, 0 10%);
+}
+
+.contact-location-board-shell::before {
+    content: "";
+    position: absolute;
+    top: -1px;
+    right: 22%;
+    left: -1px;
+    z-index: 8;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+    box-shadow: 0 0 30px rgba(249, 115, 22, 0.3);
+}
+
+/* map panel */
+.contact-location-map-panel {
+    position: relative;
+    display: grid;
+    align-content: end;
+    min-height: 350px;
+    padding: 1rem;
+    overflow: hidden;
+    border-right: 1px solid var(--color-border);
+    background:
+        radial-gradient(circle at 62% 36%, rgba(249, 115, 22, 0.28), transparent 12rem),
+        rgba(8, 10, 12, 0.3);
+}
+
+.contact-location-map-art {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, transparent 0 18%, rgba(255, 255, 255, 0.08) 19%, transparent 20%),
+        linear-gradient(90deg, transparent 0 54%, rgba(249, 115, 22, 0.14) 55%, transparent 56%),
+        linear-gradient(180deg, transparent 0 31%, rgba(255, 255, 255, 0.07) 32%, transparent 33%),
+        linear-gradient(180deg, transparent 0 68%, rgba(249, 115, 22, 0.13) 69%, transparent 70%);
+}
+
+.contact-location-map-art .map-road {
+    position: absolute;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(251, 146, 60, 0.72), transparent);
+    transform: rotate(-12deg);
+}
+
+.map-road-a {
+    left: 7%;
+    top: 24%;
+    width: 76%;
+}
+
+.map-road-b {
+    right: 6%;
+    top: 50%;
+    width: 64%;
+}
+
+.map-road-c {
+    left: 12%;
+    bottom: 26%;
+    width: 54%;
+}
+
+.map-roofline {
+    position: absolute;
+    left: 13%;
+    right: 13%;
+    top: 15%;
+    height: 76px;
+    transform: skewX(-28deg);
+    border-top: 2px solid rgba(249, 115, 22, 0.72);
+    border-bottom: 1px solid rgba(249, 115, 22, 0.22);
+    box-shadow: 0 0 24px rgba(249, 115, 22, 0.14);
+}
+
+.contact-location-pin {
+    position: absolute;
+    left: 58%;
+    top: 34%;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    color: #111111;
+    background: var(--color-accent);
+    border: 1px solid var(--color-accent-light);
+    box-shadow:
+        0 18px 42px rgba(249, 115, 22, 0.36),
+        0 0 0 10px rgba(249, 115, 22, 0.12);
+    transition: transform var(--transition-base);
+}
+
+.contact-location-pin svg {
+    width: 21px;
+    height: 21px;
+}
+
+.contact-location-map-panel:hover .contact-location-pin {
+    transform: translateY(-6px) rotate(-4deg);
+}
+
+.contact-location-address {
+    position: relative;
+    z-index: 4;
+    display: grid;
+    gap: 0.32rem;
+    padding: 0.82rem;
+    background: rgba(8, 10, 12, 0.76);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.contact-location-address small,
+.contact-location-info-title small,
+.contact-location-photo-label span {
+    color: var(--color-accent-light);
+    font-size: 0.64rem;
+    font-weight: 850;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.contact-location-address strong {
+    color: var(--color-heading);
+    font-family: var(--font-heading);
+    font-size: clamp(1.12rem, 1.8vw, 1.45rem);
+    line-height: 1.1;
+}
+
+.contact-location-address span {
+    color: var(--color-text);
+    font-size: 0.84rem;
+    line-height: 1.4;
+}
+
+/* info panel */
+.contact-location-info-panel {
+    position: relative;
+    display: grid;
+    align-content: center;
+    gap: 0.85rem;
+    min-height: 350px;
+    padding: 1rem;
+    border-right: 1px solid var(--color-border);
+}
+
+.contact-location-info-panel::before {
+    content: "";
+    position: absolute;
+    right: -4rem;
+    bottom: -5rem;
+    width: 240px;
+    aspect-ratio: 1.65;
+    transform: rotate(-9deg);
+    border: 1px solid rgba(249, 115, 22, 0.14);
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.12) 49%, transparent 50%);
+    pointer-events: none;
+}
+
+.contact-location-info-title {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 42px 1fr;
+    gap: 0.68rem;
+    align-items: center;
+}
+
+.contact-location-info-title>span {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    color: #111111;
+    background: var(--color-accent);
+    border: 1px solid var(--color-accent-light);
+    box-shadow: 0 14px 34px rgba(249, 115, 22, 0.28);
+}
+
+.contact-location-info-title svg {
+    width: 19px;
+    height: 19px;
+}
+
+.contact-location-info-title h3 {
+    margin-top: 0.14rem;
+    font-size: clamp(1.08rem, 1.7vw, 1.35rem);
+}
+
+.contact-location-info-lines {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    gap: 0.48rem;
+}
+
+.contact-location-info-lines a,
+.contact-location-info-lines div {
+    display: grid;
+    grid-template-columns: 28px 1fr;
+    gap: 0.5rem;
+    align-items: center;
+    min-height: 40px;
+    padding: 0.52rem;
+    color: var(--color-text);
+    background: rgba(255, 255, 255, 0.038);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.82rem;
+    line-height: 1.32;
+    transition:
+        transform var(--transition-base),
+        color var(--transition-base),
+        background var(--transition-base),
+        border-color var(--transition-base);
+}
+
+.contact-location-info-lines svg {
+    width: 15px;
+    height: 15px;
+    color: var(--color-accent-light);
+    transition: transform var(--transition-base);
+}
+
+.contact-location-info-lines a:hover,
+.contact-location-info-lines div:hover {
+    color: var(--color-accent-pale);
+    transform: translateX(5px);
+    background: rgba(249, 115, 22, 0.11);
+    border-color: rgba(249, 115, 22, 0.3);
+}
+
+.contact-location-info-lines a:hover svg,
+.contact-location-info-lines div:hover svg {
+    transform: scale(1.08) rotate(-3deg);
+}
+
+.contact-location-info-panel p {
+    position: relative;
+    z-index: 2;
+    padding-top: 0.72rem;
+    color: var(--color-muted);
+    border-top: 1px solid var(--color-border);
+    font-size: 0.8rem;
+    line-height: 1.45;
+}
+
+/* photo panel */
+.contact-location-photo-panel {
+    position: relative;
+    min-height: 350px;
+    overflow: hidden;
+    background: var(--color-dark);
+}
+
+.contact-location-photo-panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: saturate(1.2) contrast(1.14) brightness(0.68);
+    transform: scale(1.03);
+    transition:
+        transform var(--transition-slow),
+        filter var(--transition-slow);
+}
+
+.contact-location-photo-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background:
+        linear-gradient(180deg, rgba(8, 10, 12, 0.08), rgba(8, 10, 12, 0.78)),
+        radial-gradient(circle at 20% 22%, rgba(249, 115, 22, 0.32), transparent 15rem);
+    pointer-events: none;
+}
+
+.contact-location-photo-panel::after {
+    content: "";
+    position: absolute;
+    inset: auto 0 0;
+    z-index: 2;
+    height: 92px;
+    background:
+        linear-gradient(158deg, transparent 0 48%, rgba(249, 115, 22, 0.46) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(249, 115, 22, 0.24), transparent 52%);
+    pointer-events: none;
+}
+
+.contact-location-photo-panel:hover img {
+    transform: scale(1.07) translateX(5px);
+    filter: saturate(1.34) contrast(1.18) brightness(0.8);
+}
+
+.contact-location-photo-label {
+    position: absolute;
+    left: 0.9rem;
+    right: 0.9rem;
+    bottom: 0.9rem;
+    z-index: 4;
+    display: flex;
+    align-items: center;
+    gap: 0.52rem;
+    padding: 0.62rem;
+    background: rgba(8, 10, 12, 0.74);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+}
+
+.contact-location-photo-label svg {
+    width: 16px;
+    height: 16px;
+    color: var(--color-accent-light);
+}
+
+/* responsive */
+@media (max-width: 1180px) {
+    .contact-location-board-head {
+        margin-inline: auto;
+        text-align: center;
+    }
+
+    .contact-location-board-head .eyebrow,
+    .contact-location-board-head h2 {
+        margin-inline: auto;
+    }
+
+    .contact-location-board-shell {
+        grid-template-columns: 1fr 1fr;
+        max-width: 900px;
+        margin-inline: auto;
+    }
+
+    .contact-location-photo-panel {
+        grid-column: 1 / -1;
+        min-height: 260px;
+    }
+}
+
+@media (max-width: 760px) {
+    .contact-location-board {
+        padding-block: 2.6rem;
+    }
+
+    .contact-location-board-shell {
+        grid-template-columns: 1fr;
+        clip-path: polygon(5% 0, 100% 0, 100% 96%, 94% 100%, 0 100%, 0 4%);
+    }
+
+    .contact-location-map-panel,
+    .contact-location-info-panel,
+    .contact-location-photo-panel {
+        min-height: 290px;
+        border-right: 0;
+        border-bottom: 1px solid var(--color-border);
+    }
+
+    .contact-location-info-panel {
+        align-content: start;
+    }
+
+    .contact-location-photo-panel {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 420px) {
+    .contact-location-board-shell {
+        clip-path: none;
+    }
+
+    .contact-location-map-panel,
+    .contact-location-info-panel,
+    .contact-location-photo-panel {
+        min-height: 270px;
+        padding: 0.82rem;
+    }
+
+    .contact-location-info-title {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ==========================================================
+   CONTACT MINI FORM HEAD — PHOTO BACKGROUND
+   ========================================================== */
+
+.contact-mini-form-head {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    background:
+        linear-gradient(90deg, rgba(8, 10, 12, 0.92), rgba(8, 10, 12, 0.68)),
+        linear-gradient(180deg, rgba(8, 10, 12, 0.25), rgba(8, 10, 12, 0.88)),
+        radial-gradient(circle at 18% 18%, rgba(249, 115, 22, 0.32), transparent 16rem),
+        url("../assets/images/roof-contact-card.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.contact-mini-form-head>* {
+    position: relative;
+    z-index: 2;
+}
+
+.contact-mini-form-head::before {
+    content: "";
+    position: relative;
+    z-index: 2;
+    display: block;
+    width: min(100%, 220px);
+    height: 2px;
+    background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light), transparent);
+    box-shadow: 0 0 24px rgba(249, 115, 22, 0.35);
+}
+
+.contact-mini-form-head::after {
+    content: "";
+    position: absolute;
+    right: -4rem;
+    bottom: -4rem;
+    z-index: 1;
+    width: 260px;
+    aspect-ratio: 1.7;
+    transform: rotate(-10deg);
+    border: 1px solid rgba(249, 115, 22, 0.22);
+    background:
+        linear-gradient(135deg, transparent 0 48%, rgba(249, 115, 22, 0.2) 49%, transparent 50%),
+        linear-gradient(90deg, rgba(251, 146, 60, 0.1), transparent);
+    pointer-events: none;
+}
+
+.contact-mini-form-head h2 {
+    text-shadow: 0 12px 34px rgba(0, 0, 0, 0.45);
+}
+
+.contact-mini-form-head p {
+    color: rgba(212, 203, 193, 0.9);
+}
